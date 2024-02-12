@@ -27,6 +27,9 @@ When the class "caption" is added to an tag a thin white border is applied (inte
 
 When a class "left" or "right" is applied to an <img> tag the image will have a thin white boarder addded. On wide screens the image will be placed to one side and not exceed 50% of the window width. On narrow screens the image will occuply the full width.
 
+## Future Development
+The CSS file starts with a complete list of the colours used in the default theme. They are declared as variables to make it easy to create alternative colour schemes. I intend to add a "resources" folder to later versions of the theme. It is hoped this will include a number of sample colour declarations for the theme and header image files as well as tips on other ways the theme can be customised. Others are invited to submit items that could be included in the resources folder.
+
 ## How to install
 1. Copy this URL:
 https://raw.githubusercontent.com/NorfolkGreg/GregCustom/master/wcms-modules.json

@@ -21,7 +21,7 @@ The menu reveals sub-pages on a hover action, producing the usual problems on to
 Currently, the stylesheet dos not support multiple sub-page levels.
 
 ## Other Features of the Theme
-When <section> tags are applied to the site a thin white line is added above the block.
+When "section" tags are applied to the site a thin white line is added above the block.
 When the class "caption" is added to an tag a thin white border is applied (intended for use on images!)
 When a class "left" or "right" is applied to an <img> tag the image will have a thin white boarder addded. On wide screens the image will be placed to one side and not exceed 50% of the window width. On narrow screens the image will occuply the full width.
 

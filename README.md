@@ -2,11 +2,11 @@
 A responsive Wcms theme with resources to aid customisation.
 
 ## Preview - Wide Screens
-On installation will look like this:
+On installation screens wider than 600px will look like this:
 
 ![Wide screen preview](/previewwide.jpg)
 
-The body of any page is limited to 900px wide.
+The body of any page is limited to a maximum 900px wide.
 
 The header showing the blue background and logo disc is an easily deleted or substituted background image. If deleted, by default the plain dark blue background colour is revealed. All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens. When sub-pages are added, on hover, the menu shows these on drop-downs beneath the top level item
 

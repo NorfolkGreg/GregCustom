@@ -1,12 +1,14 @@
 # GregCustom
 A responsive Wcms theme with resources to aid customisation.
 
-## Preview
+## Preview - Wide Screens
 On installation will look like this:
 
 ![Wide screen preview](/previewwide.jpg)
 
-The header showing the blue background and logo disc is an easily deleted or substituted background image. If deleted, by default the plain dark blue background colour is revealed. All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens. When sub-pages are added the menu shows these on drop-downs beneath the top level item
+The header showing the blue background and logo disc is an easily deleted or substituted background image. If deleted, by default the plain dark blue background colour is revealed. All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens. When sub-pages are added, on hover, the menu shows these on drop-downs beneath the top level item
+
+## Preview - Narrow Screens
 
 ![Narrow screen preview](/previewnarrow.jpg)
 

@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "themes": {
+        "GregCustom": {
+            "name": "GregCustom",
+            "repo": "https://github.com/NorfolkGreg/GregCustom/tree/master",
+            "zip": "https://github.com/NorfolkGreg/GregCustom/archive/master.zip",
+            "summary": "Dark Theme featuring traditional header and menu bar with added resources to aid customisation.",
+            "version": "0.0.1",
+            "image": "https://raw.githubusercontent.com/NorfolkGreg/GregCustom/master/preview.jpg"
+        }
+    }
+}

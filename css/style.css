@@ -109,7 +109,6 @@ header h1 {
 	margin: 0;
 	padding: 0 20px 0 0;
 	color: var(--pagetitle);
-	background-color: var(--headerbkgnd);
 	background-position: left top;
 	background-image: url(../images/headerwide.jpg);
 }
@@ -252,8 +251,6 @@ header h1 {
 	font-family: 'McLaren', cursive;
 	font-size: 1.75em;
 	color: var(--pagetitle);
-	background-color: var(--headerbkgnd);
-
 }
 header h1 em {
 	font-family: 'Boogaloo', cursive;

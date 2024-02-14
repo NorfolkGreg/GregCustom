@@ -1,46 +1,46 @@
 :root{
-
-	--bodybkgnd: #999999;
-	--bodytext: #ffffff;
-	--wrapperbkgnd: #333333;
+	--scrnbkgnd: #999999;
+	--pagebkgnd: #333333;
+	--headerbkgnd: #000063;
 	--sitetitle: #ff0000;
+	--pagetitle: #ffffff;
+	--pagedestop: #36383f;
 	--pagedesc: #666666;
 	--pagedesbkgnd: #ffffff;
 	--menubkgnd: #ffffff;
-	--menubtn: #909090;
+	--menubghvr: #dfdfdf;
 	--menutext: #36383F;
-	--menuhvr: #dfdfdf;
-	--section: #ffffff;
+	--menutxthvr: #333333;
+	--menubtn: #909090;
+	--maintop: #333333;
+	--maintext: #ffffff;
+	--mainbkgnd: #333333;
 	--link: #ffff00;
 	--linkhvr: #ff0000;
 	--imagebdr: #ffffff;
+	--ftrbdr: #ffffff;
+	--ftrtext: #ffffff;
+	--ftrbkgnd: #333333;
 }
-
 /* =========== Any Width Styles =========== */
-
 body {
 	margin: 0;
 	padding: 0;
-	color: var(--bodytext);
-	background-color: var(--bodybkgnd);
+	color: var(--maintext);
+	background-color: var(--scrnbkgnd);
 	font-family: Arial, Helvetica, sans-serif;
 	min-height: 1000px;
 }
-
 .main {
-	margin-right: 1em;
-	margin-left: 1em;
-	line-height: 1.25em;
+	border-top: 1px solid var(--maintop);
+	background-color: var(--mainbkgnd);
+	padding: 0.1em 1em;
 }
 .main a, footer a {
 	color: var(--link);
 }
 .main a:hover, footer a:hover {
 	color: var(--linkhvr);
-}
-.main section.overline{
-	border-top: 1px solid var(--section);
-	margin-top: 1.5em;
 }
 .main dt {
 	margin-top: 1em;
@@ -52,26 +52,11 @@ body {
 .main dd p {
 	margin-top: 0;
 }
-.main section#gameslist h3 {
-	font-family: 'McLaren', cursive;
-	font-size: 1.5em;
-	line-height: 1.1em;
-	margin-top: 0.5em;
-	margin-bottom: 0.25em;
-}
-.main section#gameslist  h3 + p {
-	margin-top: 0.25em;
-}
-.main section#gameslist img {
-	float: left;
-	width: 200px;
-	height: 150px;
-	border: 1px solid var(--imagebdr);
-	margin: 0 0.5em 0 0;
-}
 footer {
-	border-top: 1px solid var(--section);
-	margin: 0.5em 0;
+	border-top: 1px solid var(--ftrbdr);
+	padding: 0.25em 1em;
+	color: var(--ftrtext);
+	background-color: var(--ftrbkgnd);
 }
 footer p {
 	margin: 0.25em 1em;
@@ -85,6 +70,7 @@ footer p.credit {
 ul.menu {
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-weight: bold;
+	color: var(--menutext);
 }
 /* ========== Submenu Dropdown Arrow ========== */
 
@@ -99,17 +85,7 @@ ul.menu {
 .menu li > a:only-child:after {
 	content: ''
 }
-/* ======== Navigation Positioning/Stacking ======== */
 
-div.inner {
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: 10;
-	display: block;
-	height: 30px;
-	background-color: var(--menubkgnd);
-}
 /* =============== Wide Screen Styles ============== */
 @media screen and (min-width: 600px) {
 
@@ -117,7 +93,7 @@ div.inner {
 	min-height: 1000px;
 	margin: 0px auto;
 	padding-bottom: 1em;
-	background-color: var(--wrapperbkgnd);
+	background-color: var(--pagebkgnd);
 	max-width: 900px;
 }
 
@@ -126,19 +102,14 @@ header {
 	text-align: right;
 	border-bottom: 1px solid var(--menutext);
 }
-header img {
-	float:left;
-	height: 150px;
-	width: 150px;
-	margin: 5px;
-}
 header h1 {
 	height: 160px;
 	font-family: 'McLaren', cursive;
 	font-size: 2em;
 	margin: 0;
 	padding: 0 20px 0 0;
-	background-color: #000063;
+	color: var(--pagetitle);
+	background-color: var(--headerbkgnd);
 	background-position: left top;
 	background-image: url(../images/headerwide.jpg);
 }
@@ -157,9 +128,23 @@ header h2 {
 	padding-bottom: 5px;
 	color: var(--pagedesc);
 	background-color: var(--pagedesbkgnd);
+	border-top: 1px solid var(--pagedestop);
 }
 
-/* =========== Navigation =========== */
+/* ============= Navigation ============= */
+
+/* ======== Positioning/Stacking ======== */
+
+div.inner {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: block;
+	height: 30px;
+	background-color: var(--menubkgnd);
+}
+
 /* Hide checkbox */
 
 #menuControl {
@@ -191,8 +176,8 @@ ul.menu {
 	border-bottom: 1px solid var(--menutext);
 }
 .menu a:hover {
-	background-color: var(--menuhvr);
-	color: var(--menutext);
+	background-color: var(--menubghvr);
+	color: var(--menutxthvr);
 }
 
 /* ============ Sub nav ============ */
@@ -224,15 +209,6 @@ ul.menu {
 }
 
 /* =========== Main Wide Screen Styles =========== */
-.main div.chancepack {
-	float: right;
-	color: #000000;
-	background-color: #eeeeee;
-	padding-left: 1em;
-	margin-left: 10px;
-	width: 47%;
-	max-width: 381px;
-}
 .main img {
 	display: block;
 	border: 1px solid var(--imagebdr);
@@ -258,22 +234,16 @@ ul.menu {
 @media screen and (max-width: 600px) {
 
 body {
-	background-color: var(--wrapperbkgnd);
+	background-color: var(--pagebkgnd);
 }
 header {
 	text-align: left;
-	background-color: #000063;
+	background-color: var(--headerbkgnd);
 	background-position: right top;
-	background-image: url(../images/headernarrow.jpg);"
+	background-image: url(../images/headernarrow.jpg);
 	line-height: 2.5em;
 	padding-top: 10px;
 	border-bottom: 1px solid var(--menutext);
-}
-header img {
-	float:right;
-	height: 120px;
-	width: 120px;
-	margin:0 5px;
 }
 header h1 {
 	min-height: 130px;
@@ -281,6 +251,9 @@ header h1 {
 	padding: 2px;
 	font-family: 'McLaren', cursive;
 	font-size: 1.75em;
+	color: var(--pagetitle);
+	background-color: var(--headerbkgnd);
+
 }
 header h1 em {
 	font-family: 'Boogaloo', cursive;
@@ -296,19 +269,22 @@ header h2 {
 	margin-bottom: 0;
 	padding-right: 10px;
 	color: var(--pagedesc);
-	background-color: var(--imagebdr);
+	background-color: var(--pagedesbkgnd);
+	border-top: 1px solid var(--pagedestop);
 	line-height: 1.25em;
 }
-.main {
-  margin-right: 1em;
-  margin-left: 1em;
-  line-height: 1.25em;
-}
-
 /* =========== Navigation - Narrow Screen =========== */
-
+/* ======== Positioning/Stacking ======== */
+div.inner {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: block;
+	height: 50px;
+	background-color: var(--menubkgnd);
+}
 /* =========== Menu Button =========== */
-
 #menuControl + label {
 	display: inline-block;
 	width: 50px;
@@ -358,8 +334,8 @@ ul.menu {
 	border-bottom: 1px solid var(--menutext);
 }
 .menu a:hover {
-	background-color: var(--menuhvr);
-	color: var(--menutext);
+	background-color: var(--menubghvr);
+	color: var(--menutxthvr);
 }
 
 /* =========== Sub nav =========== */
@@ -375,11 +351,6 @@ nav {
 	width: 100%;
 	margin-left: -40px;
 }
-/*
-.active {
-	background-color: var(--menuhvr);
-	color: var(--menubkgnd);
-}  */
 .subPageDropdown a {
 	color: var(--menutext);
 	background-color: var(--menubkgnd);
@@ -395,7 +366,7 @@ nav {
 
 /* ========== Main Section - Narrow Screen ========== */
 .main {
-	margin-top: 2em;
+  line-height: 1.25em;
 }
 .main img {
 	display: block;
@@ -403,11 +374,6 @@ nav {
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
-}
-.main img.right, .main img.left {
-	display: block;
-	width: 60%;
-	margin: 1em auto;
 }
 
 }

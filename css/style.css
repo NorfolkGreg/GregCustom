@@ -1,54 +1,376 @@
-:root{	--scrnbkgnd: #999999;	--pagebkgnd: #333333;	--headerbkgnd: #000063;
+:root{
+	--scrnbkgnd: #999999;
+	--pagebkgnd: #333333;
+	--headerbkgnd: #000063;
 	--sitetitle: #ff0000;
-	--pagetitle: #ffffff;	--pagedestop: #36383f;
-	--pagedesc: #666666;	--pagedesbkgnd: #ffffff;	--menubkgnd: #ffffff;	--menubghvr: #dfdfdf;	--menutext: #36383F;
-	--menutxthvr: #333333;	--menubtn: #909090;	--maintop: #333333;
-	--maintext: #ffffff;	--mainbkgnd: #333333;
-	--link: #ffff00;	--linkhvr: #ff0000;	--imagebdr: #ffffff;	--ftrbdr: #ffffff;
+	--pagetitle: #ffffff;
+	--pagedestop: #36383f;
+	--pagedesc: #666666;
+	--pagedesbkgnd: #ffffff;
+	--menubkgnd: #ffffff;
+	--menubghvr: #dfdfdf;
+	--menutext: #36383F;
+	--menutxthvr: #333333;
+	--menubtn: #909090;
+	--maintop: #333333;
+	--maintext: #ffffff;
+	--mainbkgnd: #333333;
+	--link: #ffff00;
+	--linkhvr: #ff0000;
+	--imagebdr: #ffffff;
+	--ftrbdr: #ffffff;
 	--ftrtext: #ffffff;
-	--ftrbkgnd: #333333;}
-/* =========== Any Width Styles =========== */
-body {	margin: 0;	padding: 0;	color: var(--maintext);	background-color: var(--scrnbkgnd);	font-family: Arial, Helvetica, sans-serif;	min-height: 1000px;}.main {
+	--ftrbkgnd: #333333;
+}
+
+/* =========== Any Width Styles =========== */
+
+body {
+	margin: 0;
+	padding: 0;
+	color: var(--maintext);
+	background-color: var(--scrnbkgnd);
+	font-family: Arial, Helvetica, sans-serif;
+	min-height: 1000px;
+}
+.main {
 	border-top: 1px solid var(--maintop);
-	background-color: var(--mainbkgnd);	padding: 0.1em 1em;}.main a, footer a {	color: var(--link);}.main a:hover, footer a:hover {	color: var(--linkhvr);}.main dt {	margin-top: 1em;	font-family: 'McLaren', cursive;	font-size: 1.5em;	font-weight: bold;	margin-bottom: 0.25em;}.main dd p {	margin-top: 0;}footer {	border-top: 1px solid var(--ftrbdr);	padding: 0.25em 1em;
+	background-color: var(--mainbkgnd);
+	padding: 0.1em 1em;
+}
+.main a, footer a {
+	color: var(--link);
+}
+.main a:hover, footer a:hover {
+	color: var(--linkhvr);
+}
+.main dt {
+	margin-top: 1em;
+	font-family: 'McLaren', cursive;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-bottom: 0.25em;
+}
+.main dd p {
+	margin-top: 0;
+}
+footer {
+	border-top: 1px solid var(--ftrbdr);
+	padding: 0.25em 1em;
 	color: var(--ftrtext);
-	background-color: var(--ftrbkgnd);}footer p {	margin: 0.25em 1em;}footer p.credit {	float:right;}
-/* =========== Navigation Any Width =========== */ul.menu {	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;	font-weight: bold;
-	color: var(--menutext);}/* ========== Submenu Dropdown Arrow ========== */.menu li > a:after {	content: ' ?';	font-weight: bold}.menu > li > a:after {	content: ' ?';	font-weight: bold}.menu li > a:only-child:after {	content: ''}
-/* =============== Wide Screen Styles ============== */@media screen and (min-width: 600px) {
-#wrapper {	min-height: 1000px;	margin: 0px auto;	padding-bottom: 1em;	background-color: var(--pagebkgnd);	max-width: 900px;}
-/* ========== Header Styles =========== */header {
-	text-align: right;	background-color: var(--headerbkgnd);
-	border-bottom: 1px solid var(--menutext);}header h1 {
-	height: 160px;	font-family: 'McLaren', cursive;	font-size: 2em;	margin: 0;	padding: 0 20px 0 0;
+	background-color: var(--ftrbkgnd);
+}
+footer p {
+	margin: 0.25em 1em;
+}
+footer p.credit {
+	float:right;
+}
+
+/* =========== Navigation Any Width =========== */
+ul.menu {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: var(--menutext);
+}
+/* ========== Submenu Dropdown Arrow ========== */
+.menu li > a:after {
+	content: ' ?';
+	font-weight: bold
+}
+.menu > li > a:after {
+	content: ' ?';
+	font-weight: bold
+}
+.menu li > a:only-child:after {
+	content: ''
+}
+
+/* =============== Wide Screen Styles ============== */
+@media screen and (min-width: 600px) {
+#wrapper {
+	min-height: 1000px;
+	margin: 0px auto;
+	padding-bottom: 1em;
+	background-color: var(--pagebkgnd);
+	max-width: 900px;
+}
+/* ========== Header Styles =========== */
+header {
+	text-align: right;
+	background-color: var(--headerbkgnd);
+	border-bottom: 1px solid var(--menutext);
+}
+header h1 {
+	height: 160px;
+	font-family: 'McLaren', cursive;
+	font-size: 2em;
+	margin: 0;
+	padding: 0 20px 0 0;
 	color: var(--pagetitle);
 	background-position: left top;
-	background-image: url(../images/headerwide.jpg);}header h1 em {	font-family: 'Boogaloo', cursive;	font-size: 2.5em;	font-weight: normal;	font-style: normal;	color: var(--sitetitle);}header h2 {	clear: left;	margin-top: 0;	margin-bottom: 0;	padding-right: 20px;	padding-bottom: 5px;	color: var(--pagedesc);	background-color: var(--pagedesbkgnd);
-	border-top: 1px solid var(--pagedestop);}
-/* ============= Navigation ============= */
-/* ======== Positioning/Stacking ======== */div.inner {	position: relative;	top: 0;	left: 0;	z-index: 10;	display: block;	height: 30px;	background-color: var(--menubkgnd);}
+	background-image: url(../images/headerwide.jpg);
+}
+header h1 em {
+	font-family: 'Boogaloo', cursive;
+	font-size: 2.5em;
+	font-weight: normal;
+	font-style: normal;
+	color: var(--sitetitle);
+}
+header h2 {
+	clear: left;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-right: 20px;
+	padding-bottom: 5px;
+	color: var(--pagedesc);
+	background-color: var(--pagedesbkgnd);
+	border-top: 1px solid var(--pagedestop);
+}
 
-/* Hide checkbox */#menuControl {	display: none;}nav {	position: absolute;	top: 0;	z-index: 9;	float: left;	width: fit-content;	background-color: transparent;}ul.menu {	margin: 0 0 0 -40px;	list-style: none;}.menu li {	float: left;	clear: none;	border-right: 1px solid var(--menutext);}.menu a, p.subpage-nav {	display: block;	line-height: 30px;	text-decoration: none;	padding: 0 25px;	color: var(--menutext);	border-bottom: 1px solid var(--menutext);}.menu a:hover {	background-color: var(--menubghvr);	color: var(--menutxthvr);}
-/* ============ Sub nav ============ */.subpage-nav {	background-color: var(--menubkgnd);}.subPageDropdown {	position: relative;	z-index: 6;	list-style: none;	padding: 0;	display: none;	background-color: var(--menubkgnd);	border-left: 1px solid var(--menutext);	margin-left: -1px;}.subpage-nav li {	float: none;	border-right-style: none;}.subPageDropdown a {	color: var(--menutext);	margin: 0;	padding-left: 25px;}.subpage-nav:hover .subPageDropdown {	display: block;}
-/* =========== Main Wide Screen Styles =========== */.main img {	display: block;	border: 1px solid var(--imagebdr);	max-width: 100%;	margin: 0 auto 0 auto;}.main img.right {	float: right;	margin: 0 0 10px 10px;	width: 47%;	max-width: 381px;}.main img.left {	float: left;	margin-right: 10px;	margin-bottom: 0.5em;	max-width: 47%;}
+/* ============= Navigation ============= */
 
-}
-/* =========== Narrow Screen Styles =========== */@media screen and (max-width: 600px) {
-body {	background-color: var(--pagebkgnd);}header {	text-align: left;
-	background-color: var(--headerbkgnd);	background-position: right top;
-	background-image: url(../images/headernarrow.jpg);	line-height: 2.5em;	padding-top: 10px;	border-bottom: 1px solid var(--menutext);
-}header h1 {	min-height: 130px;	margin: 0px 20px 0px 10px;	padding: 2px;	font-family: 'McLaren', cursive;	font-size: 1.75em;
+/* ======== Positioning/Stacking ======== */
+div.inner {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: block;
+	height: 30px;
+	background-color: var(--menubkgnd);
+}
+
+/* Hide checkbox */
+#menuControl {
+	display: none;
+}
+nav {
+	position: absolute;
+	top: 0;
+	z-index: 9;
+	float: left;
+	width: fit-content;
+	background-color: transparent;
+}
+ul.menu {
+	margin: 0 0 0 -40px;
+	list-style: none;
+}
+.menu li {
+	float: left;
+	clear: none;
+	border-right: 1px solid var(--menutext);
+}
+.menu a, p.subpage-nav {
+	display: block;
+	line-height: 30px;
+	text-decoration: none;
+	padding: 0 25px;
+	color: var(--menutext);
+	border-bottom: 1px solid var(--menutext);
+}
+.menu a:hover {
+	background-color: var(--menubghvr);
+	color: var(--menutxthvr);
+}
+
+/* ============ Sub nav ============ */
+.subpage-nav {
+	background-color: var(--menubkgnd);
+}
+.subPageDropdown {
+	position: relative;
+	z-index: 6;
+	list-style: none;
+	padding: 0;
+	display: none;
+	background-color: var(--menubkgnd);
+	border-left: 1px solid var(--menutext);
+	margin-left: -1px;
+}
+.subpage-nav li {
+	float: none;
+	border-right-style: none;
+}
+.subPageDropdown a {
+	color: var(--menutext);
+	margin: 0;
+	padding-left: 25px;
+}
+.subpage-nav:hover .subPageDropdown {
+	display: block;
+}
+
+/* =========== Main Wide Screen Styles =========== */
+.main img {
+	display: block;
+	border: 1px solid var(--imagebdr);
+	max-width: 100%;
+	margin: 0 auto 0 auto;
+}
+.main img.right {
+	float: right;
+	margin: 0 0 10px 10px;
+	width: 47%;
+	max-width: 381px;
+}
+.main img.left {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 0.5em;
+	max-width: 47%;
+}
+
+}
+
+/* =========== Narrow Screen Styles =========== */
+@media screen and (max-width: 600px) {
+
+body {
+	background-color: var(--pagebkgnd);
+}
+header {
+	text-align: left;
+	background-color: var(--headerbkgnd);
+	background-position: right top;
+	background-image: url(../images/headernarrow.jpg);
+	line-height: 2.5em;
+	padding-top: 10px;
+	border-bottom: 1px solid var(--menutext);
+}
+header h1 {
+	min-height: 130px;
+	margin: 0px 20px 0px 10px;
+	padding: 2px;
+	font-family: 'McLaren', cursive;
+	font-size: 1.75em;
 	color: var(--pagetitle);
-}header h1 em {	font-family: 'Boogaloo', cursive;	font-size: 2.5em;	font-weight: normal;	font-style: normal;	color: var(--sitetitle);}header h2 {	text-align: right;	clear: left;	margin-top: 0;	margin-bottom: 0;	padding-right: 10px;	color: var(--pagedesc);	background-color: var(--pagedesbkgnd);
-	border-top: 1px solid var(--pagedestop);	line-height: 1.25em;}
-/* =========== Navigation - Narrow Screen =========== */
-/* ======== Positioning/Stacking ======== */div.inner {	position: relative;	top: 0;	left: 0;	z-index: 10;	display: block;	height: 50px;	background-color: var(--menubkgnd);}
+}
+header h1 em {
+	font-family: 'Boogaloo', cursive;
+	font-size: 2.5em;
+	font-weight: normal;
+	font-style: normal;
+	color: var(--sitetitle);
+}
+header h2 {
+	text-align: right;
+	clear: left;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-right: 10px;
+	color: var(--pagedesc);
+	background-color: var(--pagedesbkgnd);
+	border-top: 1px solid var(--pagedestop);
+	line-height: 1.25em;
+}
 
-/* =========== Menu Button =========== */#menuControl + label {	display: inline-block;	width: 50px;	height: 50px;	position: relative;	float: right;	z-index: 10;	cursor: pointer;	background-color: var(--menubtn);	background-image: url("../images/menu.png");	background-repeat: no-repeat;	background-position: left top;}
-/* =========== Hide checkbox =========== */#menuControl {	display: none;}
-/* ========== Toggle menu icon ========== */#menuControl:checked ~ nav {	max-height: 100%;}
-/* =========== Navigation - Narrow Layout =========== */nav {	position: relative;	top: -50px;	z-index: 8;	transition: max-height .5s ease-out;	width: 100%;	background-color: var(--menubkgnd);	overflow: hidden;}ul.menu {	margin: 0 0 0 -40px;	list-style: none;}.menu a, p.subpage-nav {	display: block;	height: 50px;	line-height: 50px;	text-decoration: none;	padding: 0 25px;	color: var(--menutext);	border-bottom: 1px solid var(--menutext);}.menu a:hover {	background-color: var(--menubghvr);	color: var(--menutxthvr);}
-/* =========== Sub nav =========== */nav {	min-height: 50px;}.subpage-nav {	position: relative;	display: block;}.subPageDropdown {	display: none;	width: 100%;	margin-left: -40px;}
-.subPageDropdown a {	color: var(--menutext);	background-color: var(--menubkgnd);	margin: 0;	padding-left: 50px;	text-decoration: none;	display: block;	text-align: left;}.subpage-nav:hover .subPageDropdown {	display: block;}
-/* ========== Main Section - Narrow Screen ========== */.main {  line-height: 1.25em;}.main img {	display: block;	border: 1px solid var(--imagebdr);	width: 100%;	margin-right: auto;	margin-left: auto;}
+/* =========== Navigation - Narrow Screen =========== */
+
+/* ======== Positioning/Stacking ======== */
+div.inner {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: block;
+	height: 50px;
+	background-color: var(--menubkgnd);
+}
+
+/* =========== Menu Button =========== */
+#menuControl + label {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	float: right;
+	z-index: 10;
+	cursor: pointer;
+	background-color: var(--menubtn);
+	background-image: url("../images/menu.png");
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+/* =========== Hide checkbox =========== */
+#menuControl {
+	display: none;
+}
+
+/* ========== Toggle menu icon ========== */
+#menuControl:checked ~ nav {
+	max-height: 100%;
+}
+
+/* =========== Navigation - Narrow Layout =========== */
+nav {
+	position: relative;
+	top: -50px;
+	z-index: 8;
+	transition: max-height .5s ease-out;
+	width: 100%;
+	background-color: var(--menubkgnd);
+	overflow: hidden;
+}
+ul.menu {
+	margin: 0 0 0 -40px;
+	list-style: none;
+}
+.menu a, p.subpage-nav {
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	text-decoration: none;
+	padding: 0 25px;
+	color: var(--menutext);
+	border-bottom: 1px solid var(--menutext);
+}
+.menu a:hover {
+	background-color: var(--menubghvr);
+	color: var(--menutxthvr);
+}
+
+/* =========== Sub nav =========== */
+nav {
+	min-height: 50px;
+}
+.subpage-nav {
+	position: relative;
+	display: block;
+}
+.subPageDropdown {
+	display: none;
+	width: 100%;
+	margin-left: -40px;
+}
+
+.subPageDropdown a {
+	color: var(--menutext);
+	background-color: var(--menubkgnd);
+	margin: 0;
+	padding-left: 50px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+.subpage-nav:hover .subPageDropdown {
+	display: block;
+}
+
+/* ========== Main Section - Narrow Screen ========== */
+.main {
+  line-height: 1.25em;
+}
+.main img {
+	display: block;
+	border: 1px solid var(--imagebdr);
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
 }

@@ -27,7 +27,7 @@ How to use the list of variables setting the colour definitions for the theme. A
 Notes concerning the "Page Contents" part of the header area and a description of how to add images in the header area that replace the default plain colour background. The resources include sample images to show how this feature can be used.
 
 ## Future Development
-Contributions of additional colour schemes and header backgrounds that can be included in the "resources" folder in future versions of the theme are welcome.
+Contributions of additional colour schemes and header backgrounds that can be included in the "resources" folder in future versions of the theme are welcome together with any suggestions for tweaks to the theme.php or style.css file that you think may be useful to others.
 
 ## How to install
 1. Copy this URL:

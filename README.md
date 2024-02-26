@@ -17,7 +17,11 @@ On narrow screens the Site and Page titles switch to left alignment. and the men
 ## Other Features
 Currently, the stylesheet only supports one level of sub-pages.
 
-A 1px border is applied to all images. Images will occupy with full width of the window and will shrink as the window is narrowed. A class "left" or "right" can be applied to an "img" tag. On wide screens the image will be placed on that side and not exceed 50% of the window width. On narrow screens all images will occuply the full width of the window.
+A 1px border is applied to all images. Images will occupy with full width of the window and will shrink as the window is narrowed.
+
+A class "left" or "right" can be applied to an "img" tag. On wide screens the image will be placed on that side and not exceed 50% of the window width. On narrow screens all images will occuply the full width of the window.
+
+Similarly, classes "caption", "captionleft" and "captionright" can be applied to "p" tags. Such paragraphs should hold an image followed by the caption for that image.
 
 ## Customisation Resources
 A "resources" folder is included in the theme when it is installed. It is recommended that this is downloaded and deleted from the server as it performs no function there. In the folder will be found a "ReadMe.txt" file that covers the following topics:

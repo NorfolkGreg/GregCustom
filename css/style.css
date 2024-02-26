@@ -1,4 +1,5 @@
 :root{
+/* Original Dark Theme
 	--scrnbkgnd: #999999;
 	--pagebkgnd: #333333;
 	--headerbkgnd: #000063;
@@ -18,9 +19,38 @@
 	--link: #ffff00;
 	--linkhvr: #ff0000;
 	--imagebdr: #ffffff;
+	--caption: #000000;
+	--captionbkgnd: #999999;
 	--ftrbdr: #ffffff;
 	--ftrtext: #ffffff;
 	--ftrbkgnd: #333333;
+*/
+
+--scrnbkgnd: #333333;
+--pagebkgnd: #dddddd;
+--headerbkgnd: #dddddd;
+--sitetitle: #ff0000;
+--pagetitle: #000000;
+--pagedestop: #000000;
+--pagedesc: #f9f9f9;
+--pagedesbkgnd: #999999;
+--menubkgnd: #dddddd;
+--menubghvr: #999999;
+--menutext: #36383F;
+--menutxthvr: #f9f9f9;
+--menubtn: #909090;
+--maintop: #333333;
+--maintext: #000000;
+--mainbkgnd: #fdfdfd;
+--link: #0000ff;
+--linkhvr: #ff0000;
+--imagebdr: #000000;
+--caption: #ffffff;
+--captionbkgnd: #666666;
+--ftrbdr: #000000;
+--ftrtext: #ffffff;
+--ftrbkgnd: #999999;
+
 }
 
 /* =========== Any Width Styles =========== */
@@ -56,9 +86,10 @@ body {
 }
 footer {
 	border-top: 1px solid var(--ftrbdr);
-	padding: 0.25em 1em;
+	padding: 0.25em 0;
 	color: var(--ftrtext);
 	background-color: var(--ftrbkgnd);
+	margin-bottom: 0;
 }
 footer p {
 	margin: 0.25em 1em;
@@ -75,11 +106,11 @@ ul.menu {
 }
 /* ========== Submenu Dropdown Arrow ========== */
 .menu li > a:after {
-	content: ' ?';
+	content: ' \25BC';
 	font-weight: bold
 }
 .menu > li > a:after {
-	content: ' ?';
+	content: ' \25BC';
 	font-weight: bold
 }
 .menu li > a:only-child:after {
@@ -91,7 +122,7 @@ ul.menu {
 #wrapper {
 	min-height: 1000px;
 	margin: 0px auto;
-	padding-bottom: 1em;
+/*	padding-bottom: 1em; */
 	background-color: var(--pagebkgnd);
 	max-width: 900px;
 }
@@ -216,11 +247,40 @@ ul.menu {
 	width: 47%;
 	max-width: 381px;
 }
+.main p.captionright {
+	float: right;
+	margin: 0 0 0.5em 10px;
+	width: 47%;
+	max-width: 381px;
+}
 .main img.left {
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 0.5em;
 	max-width: 47%;
+}
+.main p.captionleft {
+	float: left;
+	margin: 0 10px 0.5em 0;
+	max-width: 47%;
+}
+.main p.caption,
+.main p.captionleft,
+.main p.captionright {
+	border: 1px solid var(--imagebdr);
+	text-align: center;
+	padding: 0 0 0.25em 0;
+	color: var(--caption);
+	background-color: var(--captionbkgnd);
+}
+.main p.caption img,
+.main p.captionright img,
+.main p.captionleft img {
+	border-top-style: none;
+	border-left-style: none;
+	border-bottom: 2px solid ver(--imagebdr);
+	border-right-style: none;
+	margin-bottom: 0.25em;
 }
 
 }
@@ -364,12 +424,43 @@ nav {
 .main {
   line-height: 1.25em;
 }
-.main img {
+.main img,
+.main p.caption {
 	display: block;
 	border: 1px solid var(--imagebdr);
 	width: 100%;
 	margin-right: auto;
 	margin-left: auto;
+}
+.main p.caption {
+	text-align: center;
+	padding: 0 0 0.25em 0;
+	color: var(--caption);
+	background-color: var(--captionbkgnd);
+}
+.main p.captionleft,
+.main p.captionright {
+	width: 80%;
+	margin: 0 auto 0.5em;
+	border: 1px solid var(--imagebdr);
+	text-align: center;
+	padding: 0 0 0.25em 0;
+	color: var(--caption);
+	background-color: var(--captionbkgnd);
+}
+.main img.right, .main img.left {
+	display: block;
+	width: 80%;
+	margin: 1em auto;
+}
+.main p.caption img,
+.main p.captionright img,
+.main p.captionleft img {
+	border-top-style: none;
+	border-left-style: none;
+	border-bottom: 1px solid ver(--imagebdr);
+	border-right-style: none;
+	margin-bottom: 0.25em;
 }
 
 

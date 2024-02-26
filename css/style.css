@@ -1,5 +1,4 @@
 :root{
-/* Original Dark Theme
 	--scrnbkgnd: #999999;
 	--pagebkgnd: #333333;
 	--headerbkgnd: #000063;
@@ -24,33 +23,6 @@
 	--ftrbdr: #ffffff;
 	--ftrtext: #ffffff;
 	--ftrbkgnd: #333333;
-*/
-
---scrnbkgnd: #333333;
---pagebkgnd: #dddddd;
---headerbkgnd: #dddddd;
---sitetitle: #ff0000;
---pagetitle: #000000;
---pagedestop: #000000;
---pagedesc: #f9f9f9;
---pagedesbkgnd: #999999;
---menubkgnd: #dddddd;
---menubghvr: #999999;
---menutext: #36383F;
---menutxthvr: #f9f9f9;
---menubtn: #909090;
---maintop: #333333;
---maintext: #000000;
---mainbkgnd: #fdfdfd;
---link: #0000ff;
---linkhvr: #ff0000;
---imagebdr: #000000;
---caption: #ffffff;
---captionbkgnd: #666666;
---ftrbdr: #000000;
---ftrtext: #ffffff;
---ftrbkgnd: #999999;
-
 }
 
 /* =========== Any Width Styles =========== */

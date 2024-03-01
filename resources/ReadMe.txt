@@ -8,6 +8,8 @@ Contents
 + Sample Colour Schemes
 + Sample Header Images
 + Other Suggested Tweaks
++ Inserting Videos
++ Inserting Audio
 
 ============================================================
 Colour Settings
@@ -322,5 +324,69 @@ your mind. Do this:
 /*
 code to be ignored
 */
+
+============================================================
+Inserting Videos
+
+To take advantage of some of the code built into the
+GregCustom Theme you need to wrap the video code within the
+following tags:
+
+<div class="video">
+
+Your code here
+
+</div>
+____________________________________________________________
+YouTube and Vimeo
+
+Simply place the embed code for the clip you wish to add to
+your site between the tags shown above, not the URL of the
+clip itself.
+
+For YouTube you find the required code by selecting the
+"Share" option on the desired video and then clicking on
+the "Embed" optio indicated with the "</>" icon.
+
+For Vimeo it's much the same. The Share option is indicated
+by a "Paper Dart" icon and the Embed code option by the
+"</>" icon.
+
+I haven't explored whether the the code built into the
+theme works with other video hosting services.
+____________________________________________________________
+Uploaded Video
+
+First use the WonderCMS file upload facility to upload the
+video and an image, known as the "poster", to be shown
+while the video is downloading, or until the user hits the
+play button. Then add the following code: 
+
+<div class="video">
+  <video controls="" style="width:100%" poster="/data/files/myimage.jpg">
+    <source src="/data/files/myvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+substituting the the name of your image for "myimage.jpg"
+and your video for "myvideo.mp4". For the theme code to
+work as intended both image and video should be of 16:9
+aspect ratio and the image should have a ".jpg" extension. 
+
+============================================================
+Inserting Audio
+
+First use the WonderCMS file upload facility to upload the
+the MP3 file that you wish to appear in a player. Then
+insert the following code into the page:
+
+<audio controls="">
+  <source src="/data/files/myaudio.mp3">
+</audio>
+
+sbstituting "myaudio.mp3" for the name of your file. The
+them code is designed to ensure the player fills the entire
+available width of the screen/window.
 ____________________________________________________________
 EoF Updated 1 March 2024

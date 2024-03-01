@@ -17,11 +17,9 @@ On narrow screens the Site and Page titles switch to left alignment. and the men
 ## Other Features
 Currently, the stylesheet only supports one level of sub-pages.
 
-A 1px border is applied to all images. Images will occupy with full width of the window and will shrink as the window is narrowed.
+A 1px border is applied to all images and videos which, on large screens will occupy the full width of the window and shrink as the window is narrowed.
 
-A class "left" or "right" can be applied to an "img" tag. On wide screens the image will be placed on that side and not exceed 50% of the window width. On narrow screens all images will occuply the full width of the window.
-
-Similarly, classes "caption", "captionleft" and "captionright" can be applied to "p" tags. Such paragraphs should hold an image followed by the caption for that image.
+A class "left" or "right" can be applied to "img" tags. On wide screens the image will be placed on that side and not exceed 50% of the window width. On narrow screens all images will occuply the full width of the window. Similarly, classes "caption", "captionleft" and "captionright" can be applied to "p" tags. Such paragraphs should hold an image followed by the caption for that image.
 
 ## Customisation Resources
 A "resources" folder is included in the theme when it is installed. It is recommended that this is downloaded and deleted from the server as it performs no function there. In the folder will be found a "ReadMe.txt" file that covers the following topics:
@@ -29,6 +27,8 @@ A "resources" folder is included in the theme when it is installed. It is recomm
 How to use the list of variables setting the colour definitions for the theme. A number of sample colour scheme declarations are provied together with preview images of them.
 #### Header Area
 Notes concerning the "Page Contents" part of the header area and a description of how to add images in the header area that replace the default plain colour background. The resources include sample images to show how this feature can be used.
+#### Video and Audio
+Notes on the code required to take advantage of the features of the theme when incuding video and audio files.
 
 ## Future Development
 Contributions of additional colour schemes and header backgrounds that can be included in the "resources" folder in future versions of the theme are welcome together with any suggestions for tweaks to the theme.php or style.css file that you think may be useful to others.

@@ -346,7 +346,7 @@ clip itself.
 
 For YouTube you find the required code by selecting the
 "Share" option on the desired video and then clicking on
-the "Embed" optio indicated with the "</>" icon.
+the "Embed" option indicated with the grey "< >" icon.
 
 For Vimeo it's much the same. The Share option is indicated
 by a "Paper Dart" icon and the Embed code option by the

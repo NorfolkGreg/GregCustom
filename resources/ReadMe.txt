@@ -352,8 +352,8 @@ For Vimeo it's much the same. The Share option is indicated
 by a "Paper Dart" icon and the Embed code option by the
 "</>" icon.
 
-I haven't explored whether the the code built into the
-theme works with other video hosting services.
+I haven't explored whether the code built into the theme
+works with other video hosting services.
 ____________________________________________________________
 Uploaded Video
 

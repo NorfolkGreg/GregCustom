@@ -23,8 +23,8 @@ Page content is limited to 900px width. Where the window
 is wider this colour appears on either side. 
 
 --pagebkgnd: Page Background
-Unless over written by the header, menu, main or footer 
-areas of the page this colour will be used. 
+This is the default background colour for the page content
+area. 
 
 --headerbkgnd: Header Background
 This colour is used as a background to the Site and Page 
@@ -47,7 +47,7 @@ to set it to match the --pagetitle colour.
 --pagedesc: Page Description Text
 The "Page Description" reproduces the text normally only 
 seen by search engines. It is usually better to show the 
-text in a colur that contrasts with that of the Page 
+text in a colour that contrasts with that of the Page 
 Title.
  
 --pagedesbkgnd: Page Description Background
@@ -134,6 +134,19 @@ When section tags are used and a class "overline" applied
 this is the colour applied to the line of the border added
 above the section.
 
+--cardbdr: Card Border Colour
+If a Section element is assigned the class "cards" this is
+the colour applied to Article elements within the section.
+
+--cardtext: Card Text Colour
+If a Section element is assigned the class "cards" this is
+the colour applied to Article elements within the section.
+
+--cardbkgnd: Card Background Colour
+If a Section element is assigned the class "cards" this is
+the background colour applied to Article elements within
+the section.
+
 ============================================================
 Sample Colour Schemes
 
@@ -179,7 +192,9 @@ From v0.0.5 this is the default Scheme.
 --ftrtext: #ffffff;
 --ftrbkgnd: #999999;
 --section: #000000;
-
+--cardbdr: #000000;
+--cardtext: #000000;
+--cardbkgnd: #efefef;
 ____________________________________________________________
 Original Dark - See schemeoriginaldark.png
 
@@ -208,8 +223,10 @@ Original Dark - See schemeoriginaldark.png
 --ftrtext: #ffffff;
 --ftrbkgnd: #333333;
 --section: #ffffff;
-
-____________________________________________________________
+--cardbdr: #ffffff;
+--cardtext: #ffffff;
+--cardbkgnd: #000063;
+___________________________________________________________
 MintGreen - See schememintgreen.png
 
 --scrnbkgnd: #999999;
@@ -222,22 +239,24 @@ MintGreen - See schememintgreen.png
 --pagedesbkgnd: #609020;
 --menubkgnd: #90D050;
 --menubghvr: #609020;
---menutext: #336608;
+--menutext: #005000;
 --menutxthvr: #99ff11;
 --menubtn: #909090;
 --maintop: #333333;
---maintext: #3C6C08;
+--maintext: #005000;
 --mainbkgnd: #c0e09d;
---link: #0000ff;
---linkhvr: #d030d0;
---imagebdr: #999999;
+--link: #005000;
+--linkhvr: #99ff11;
+--imagebdr: #005000;
 --caption: #99ff11;
 --captionbkgnd: #609020;
 --ftrbdr: #36383f;
 --ftrtext: #99ff11;
 --ftrbkgnd: #609020;
 --section: #36383f;
-
+--cardbdr: #005000;
+--cardtext: #99ff11;
+--cardbkgnd: #609020;
 ____________________________________________________________
 Carribbean Blue - See schemecaribbeanblue.png
 
@@ -257,15 +276,18 @@ Carribbean Blue - See schemecaribbeanblue.png
 --maintop: #0000dd;
 --maintext: #0000ff;
 --mainbkgnd: #94D8F6;
---link: #000030;
---linkhvr: #ff0000;
---imagebdr: #000000;
+--link: #000033;
+--linkhvr: #ffff00;
+--imagebdr: #0000ff;
 --caption: #ffffff;
 --captionbkgnd: #0099ff;
 --ftrbdr: #0000dd;
 --ftrtext: #ffffff;
 --ftrbkgnd: #0099ff;
 --section: #0000dd;
+--cardbdr: #0000ff;
+--cardtext: #94D8F6;
+--cardbkgnd: #2222ff;
 
 ============================================================
 Sample Header Images
@@ -333,9 +355,7 @@ GregCustom Theme you need to wrap the video code within the
 following tags:
 
 <div class="video">
-
-Your code here
-
+    Your code here
 </div>
 ____________________________________________________________
 YouTube and Vimeo
@@ -389,4 +409,4 @@ sbstituting "myaudio.mp3" for the name of your file. The
 them code is designed to ensure the player fills the entire
 available width of the screen/window.
 ____________________________________________________________
-EoF Updated 1 March 2024
+EoF Updated 18 November 2024

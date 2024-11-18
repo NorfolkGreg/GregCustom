@@ -1,34 +1,35 @@
 :root{
 /* Light Mono */
-	--scrnbkgnd: #333333;
-	--pagebkgnd: #dddddd;
-	--headerbkgnd: #dddddd;
-	--sitetitle: #ff0000;
-	--pagetitle: #000000;
-	--pagedestop: #000000;
-	--pagedesc: #f9f9f9;
-	--pagedesbkgnd: #999999;
-	--menubkgnd: #dddddd;
-	--menubghvr: #999999;
-	--menutext: #36383F;
-	--menutxthvr: #f9f9f9;
-	--menubtn: #909090;
-	--maintop: #333333;
-	--maintext: #000000;
-	--mainbkgnd: #fdfdfd;
-	--link: #0000ff;
-	--linkhvr: #ff0000;
-	--imagebdr: #000000;
-	--caption: #ffffff;
-	--captionbkgnd: #666666;
-	--ftrbdr: #000000;
-	--ftrtext: #ffffff;
-	--ftrbkgnd: #999999;
-	--section: #000000;
+--scrnbkgnd: #333333;
+--pagebkgnd: #dddddd;
+--headerbkgnd: #dddddd;
+--sitetitle: #ff0000;
+--pagetitle: #000000;
+--pagedestop: #000000;
+--pagedesc: #f9f9f9;
+--pagedesbkgnd: #999999;
+--menubkgnd: #dddddd;
+--menubghvr: #999999;
+--menutext: #36383F;
+--menutxthvr: #f9f9f9;
+--menubtn: #909090;
+--maintop: #333333;
+--maintext: #000000;
+--mainbkgnd: #fdfdfd;
+--link: #0000ff;
+--linkhvr: #ff0000;
+--imagebdr: #000000;
+--caption: #ffffff;
+--captionbkgnd: #666666;
+--ftrbdr: #000000;
+--ftrtext: #ffffff;
+--ftrbkgnd: #999999;
+--section: #000000;
+--cardbdr: #000000;
+--cardtext: #000000;
+--cardbkgnd: #efefef;
 }
-
 /* =========== Any Width Styles =========== */
-
 body {
 	margin: 0;
 	padding: 0;
@@ -91,6 +92,44 @@ footer p {
 footer p.credit {
 	float:right;
 }
+
+/* ------------ "Card" Styling -------------- */
+
+.main section.cards {
+	margin-bottom: 1em;
+}
+.cards article {
+	margin-top: 1em;
+	padding: 0
+}
+.cards article img {
+	float: left;
+	width: 200px;
+	height: 150px;
+	border: 1px solid var(--imagebdr);
+	margin: 0 0.5em 0 0;
+}
+.cards article h3 {
+	font-family: 'McLaren', cursive;
+	font-size: 1.5em;
+	line-height: 1.1em;
+	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+}
+.cards article  h3 + p {
+	margin-top: 0.25em;
+}
+.cards article p {
+	margin-bottom: 0.6em;;
+}
+.cards article {
+	color: var(--cardtext);
+	border: 1px solid var(--cardbdr);
+	background-color: var(--cardbkgnd);
+	border-radius: 15px;
+	padding:0 10px;
+}
+/* ---------- End "Card" Styling ------------ */
 
 /* =========== Navigation Any Width =========== */
 ul.menu {

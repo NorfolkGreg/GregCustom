@@ -13,7 +13,7 @@ All text above the menu bar is taken from fields on the "Settings > Menu" and "S
 ## Preview - Narrow Screens
 ![Narrow screen preview](/previewnarrow.jpg)
 
-On narrow screens the Site and Page titles switch to left alignment. and the menu always shows the HOME page. Further menu options are revealed by clicking the [&equiv;] button. Sub-pages appear on a hover action.
+On narrow screens the Site and Page titles switch to left alignment and the menu always shows the HOME page. Further menu options are revealed by clicking the [&equiv;] button. Sub-pages appear on a hover action.
 
 ## Other Features
 ### Theme Limitations:

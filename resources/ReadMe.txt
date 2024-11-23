@@ -8,8 +8,10 @@ Contents
 + Sample Colour Schemes
 + Sample Header Images
 + Other Suggested Tweaks
++ Image Display
 + Inserting Videos
 + Inserting Audio
++ Displaying "Cards"
 
 ============================================================
 Colour Settings
@@ -23,8 +25,8 @@ Page content is limited to 900px width. Where the window
 is wider this colour appears on either side. 
 
 --pagebkgnd: Page Background
-This is the default background colour for the page content
-area. 
+Unless over written by the header, menu, main or footer 
+areas of the page this colour will be used. 
 
 --headerbkgnd: Header Background
 This colour is used as a background to the Site and Page 
@@ -47,7 +49,7 @@ to set it to match the --pagetitle colour.
 --pagedesc: Page Description Text
 The "Page Description" reproduces the text normally only 
 seen by search engines. It is usually better to show the 
-text in a colour that contrasts with that of the Page 
+text in a colur that contrasts with that of the Page 
 Title.
  
 --pagedesbkgnd: Page Description Background
@@ -136,11 +138,15 @@ above the section.
 
 --cardbdr: Card Border Colour
 If a Section element is assigned the class "cards" this is
-the colour applied to Article elements within the section.
+the colour of the rounded border applied to Article
+elements within the section.
+(See the Section "Displaying Cards" below for details on
+the use of the three cardxxxx variables.)
 
 --cardtext: Card Text Colour
 If a Section element is assigned the class "cards" this is
-the colour applied to Article elements within the section.
+the forground colour applied to Article elements within the
+section.
 
 --cardbkgnd: Card Background Colour
 If a Section element is assigned the class "cards" this is
@@ -226,7 +232,7 @@ Original Dark - See schemeoriginaldark.png
 --cardbdr: #ffffff;
 --cardtext: #ffffff;
 --cardbkgnd: #000063;
-___________________________________________________________
+__________________________________________________________
 MintGreen - See schememintgreen.png
 
 --scrnbkgnd: #999999;
@@ -318,7 +324,7 @@ whose variable definitions are listed above.
 
 ============================================================
 Other Suggested Tweaks to "style.css"
-____________________________________________________________
+
 Page Contents:
 In the header area the default stylesheet include a bar 
 displaying the page contents. The text displayed here is 
@@ -344,9 +350,25 @@ original code so it is easy to restore should you change
 your mind. Do this:
 
 /*
-code to be ignored
+  code to be ignored
 */
 
+============================================================
+Image Display
+
+A 1px border is applied to all images and videos which, on
+large screens will occupy the full width of the window and
+shrink as the window is narrowed.
+
+A class "left" or "right" can be applied to "img" tags. On
+wide screens the image will be placed on that side and not
+exceed 50% of the window width. On narrow screens all
+images will occuply the full width of the window.
+Similarly, classes "caption", "captionleft"
+and"captionright" can be applied to "p" tags. Such
+paragraphs should hold an image followed by the caption for
+that image.
+Tweaks
 ============================================================
 Inserting Videos
 
@@ -366,14 +388,14 @@ clip itself.
 
 For YouTube you find the required code by selecting the
 "Share" option on the desired video and then clicking on
-the "Embed" option indicated with the grey "< >" icon.
+the "Embed" optio indicated with the "</>" icon.
 
 For Vimeo it's much the same. The Share option is indicated
 by a "Paper Dart" icon and the Embed code option by the
 "</>" icon.
 
-I haven't explored whether the code built into the theme
-works with other video hosting services.
+I haven't explored whether the the code built into the
+theme works with other video hosting services.
 ____________________________________________________________
 Uploaded Video
 
@@ -383,10 +405,10 @@ while the video is downloading, or until the user hits the
 play button. Then add the following code: 
 
 <div class="video">
-  <video controls="" style="width:100%" poster="/data/files/myimage.jpg">
-    <source src="/data/files/myvideo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <video controls="" style="width:100%" poster="/data/files/myimage.jpg">
+        <source src="/data/files/myvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </div>
 
 substituting the the name of your image for "myimage.jpg"
@@ -402,11 +424,39 @@ the MP3 file that you wish to appear in a player. Then
 insert the following code into the page:
 
 <audio controls="">
-  <source src="/data/files/myaudio.mp3">
+    <source src="/data/files/myaudio.mp3">
 </audio>
 
 sbstituting "myaudio.mp3" for the name of your file. The
 them code is designed to ensure the player fills the entire
 available width of the screen/window.
+
+============================================================
+Displaying Cards
+
+There is CSS code in the stylesheet that allows the user to
+create "cards", areas where the contents is shown in
+rounded corner boxes. To implements this you need to add
+HTML code in this format: 
+
+<section class="cards">
+    <article>
+        First card content here
+    </article>
+	   <article>
+        Seconbd card content here
+    </article>
+</section>
+
+There is further styling code intended for use within the
+<article> tags that can be used to format the content of
+any card:
+
+<h3><a href=""><img src="">Heading</a></h3>
+<p>Content</p>
+
+The images inserted within the <h3> tags will be floated
+left and displayed at 200pxx150px.
+
 ____________________________________________________________
-EoF Updated 18 November 2024
+EoF Updated 23 November 2024

@@ -5,12 +5,14 @@ A responsive Wcms theme with resources to aid customisation.
 On installation screens wider than 600px will look like this:
 
 ![Wide screen preview](/previewwide.jpg)
+
 The body of any page is limited to a maximum 900px wide.
 
 All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens. (See "Theme Limitations" below on the implications of this.)
 
 ## Preview - Narrow Screens
 ![Narrow screen preview](/previewnarrow.jpg)
+
 On narrow screens the Site and Page titles switch to left alignment. and the menu always shows the HOME page. Further menu options are revealed by clicking the [&equiv;] button. Sub-pages appear on a hover action.
 
 ## Other Features

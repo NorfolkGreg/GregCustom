@@ -6,7 +6,7 @@ On installation screens wider than 600px will look like this:
 ![Wide screen preview](/previewwide.jpg)
 The body of any page is limited to a maximum 900px wide.
 
-All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens. (See note below on the implications of this.)
+All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens. (See "Theme Limitations" below on the implications of this.)
 
 ## Preview - Narrow Screens
 ![Narrow screen preview](/previewnarrow.jpg)
@@ -40,4 +40,5 @@ Contributions of additional colour schemes and header backgrounds that can be in
 ## How to install
 1. Login to your WonderCMS website.
 2. Click "Settings", then "Themes" and then on the INSTALL button under the GregCustom theme.
-3. Once installed, click the ACTIVATE button
+3. (Recommended) Download the "resources" folder (found in the "theme" folder) then delete it, as it performs on function on the server.
+4. Once installed, click the ACTIVATE button

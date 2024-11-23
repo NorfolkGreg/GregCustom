@@ -15,7 +15,7 @@ On narrow screens the Site and Page titles switch to left alignment. and the men
 
 ## Other Features
 ### Theme Limitations:
-Due to the way fields from the Settings pages are used for the site header the "Simple Blog" plugin is incompatable with the them.
+Due to the way fields from the Settings pages are used for the site header, the "Simple Blog" plugin is incompatable with the theme.
 Currently, the stylesheet only supports one level of sub-pages.
 ### The Menu System
 When sub-pages are added, on hover, the menu shows these on drop-downs beneath the top level item

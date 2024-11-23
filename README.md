@@ -3,6 +3,7 @@ A responsive Wcms theme with resources to aid customisation.
 
 ## Preview - Wide Screens
 On installation screens wider than 600px will look like this:
+
 ![Wide screen preview](/previewwide.jpg)
 The body of any page is limited to a maximum 900px wide.
 

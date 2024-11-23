@@ -443,7 +443,7 @@ HTML code in this format:
     <article>
         First card content here
     </article>
-	   <article>
+    <article>
         Seconbd card content here
     </article>
 </section>

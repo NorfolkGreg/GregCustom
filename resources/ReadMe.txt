@@ -394,7 +394,7 @@ For Vimeo it's much the same. The Share option is indicated
 by a "Paper Dart" icon and the Embed code option by the
 "</>" icon.
 
-I haven't explored whether the the code built into the
+I haven't explored whether the code built into the
 theme works with other video hosting services.
 ____________________________________________________________
 Uploaded Video
@@ -411,7 +411,7 @@ play button. Then add the following code:
     </video>
 </div>
 
-substituting the the name of your image for "myimage.jpg"
+substituting the name of your image for "myimage.jpg"
 and your video for "myvideo.mp4". For the theme code to
 work as intended both image and video should be of 16:9
 aspect ratio and the image should have a ".jpg" extension. 

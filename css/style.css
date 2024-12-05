@@ -1,33 +1,34 @@
 :root{
 /* Light Mono */
---scrnbkgnd: #333333;
---pagebkgnd: #dddddd;
---headerbkgnd: #dddddd;
---sitetitle: #ff0000;
---pagetitle: #000000;
---pagedestop: #000000;
---pagedesc: #f9f9f9;
---pagedesbkgnd: #999999;
---menubkgnd: #dddddd;
---menubghvr: #999999;
---menutext: #36383F;
---menutxthvr: #f9f9f9;
---menubtn: #909090;
---maintop: #333333;
---maintext: #000000;
---mainbkgnd: #fdfdfd;
---link: #0000ff;
---linkhvr: #ff0000;
---imagebdr: #000000;
---caption: #ffffff;
---captionbkgnd: #666666;
---ftrbdr: #000000;
---ftrtext: #ffffff;
---ftrbkgnd: #999999;
---section: #000000;
---cardbdr: #000000;
---cardtext: #000000;
---cardbkgnd: #efefef;
+	--scrnbkgnd: #333333;
+	--pagebkgnd: #dddddd;
+	--headerbkgnd: #dddddd;
+	--sitetitle: #ff0000;
+	--pagetitle: #000000;
+	--pagedestop: #000000;
+	--pagedesc: #f9f9f9;
+	--pagedesbkgnd: #999999;
+	--menubkgnd: #dddddd;
+	--menubghvr: #999999;
+	--menutext: #36383F;
+	--menutxthvr: #f9f9f9;
+	--menubtn: #909090;
+	--maintop: #333333;
+	--maintext: #000000;
+	--mainbkgnd: #fdfdfd;
+	--link: #0000ff;
+	--linkhvr: #ff0000;
+	--imagebdr: #000000;
+	--caption: #ffffff;
+	--captionbkgnd: #666666;
+	--ftrbdr: #000000;
+	--ftrtext: #ffffff;
+	--ftrbkgnd: #999999;
+	--section: #000000;
+	--cardbdr: #000000;
+	--cardtext: #000000;
+	--cardbkgnd: #efefef;
+	--blockquote: #d7e7e7;
 }
 /* =========== Any Width Styles =========== */
 body {
@@ -63,6 +64,13 @@ body {
 	border-top: 1px solid var(--section);
 	margin-top: 1.5em;
 }
+
+.main blockquote {
+	background-color: var(--blockquote);
+	border-radius: 10px;
+	padding: 0.5em;
+}
+
 div.video {
 	width:100%;
 	aspect-ratio: 16 / 9;

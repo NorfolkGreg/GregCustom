@@ -153,6 +153,11 @@ If a Section element is assigned the class "cards" this is
 the background colour applied to Article elements within
 the section.
 
+--blockquote: Background Colour
+The contents blockquote element are given this background
+colour which appears with rounded corners and a small
+amount of padding.
+
 ============================================================
 Sample Colour Schemes
 
@@ -201,6 +206,7 @@ From v0.0.5 this is the default Scheme.
 --cardbdr: #000000;
 --cardtext: #000000;
 --cardbkgnd: #efefef;
+--blockquote: #d7e7e7;
 ____________________________________________________________
 Original Dark - See schemeoriginaldark.png
 
@@ -232,6 +238,7 @@ Original Dark - See schemeoriginaldark.png
 --cardbdr: #ffffff;
 --cardtext: #ffffff;
 --cardbkgnd: #000063;
+--blockquote: #000055;
 __________________________________________________________
 MintGreen - See schememintgreen.png
 
@@ -263,6 +270,7 @@ MintGreen - See schememintgreen.png
 --cardbdr: #005000;
 --cardtext: #99ff11;
 --cardbkgnd: #609020;
+--blockquote: #e7e7d7;
 ____________________________________________________________
 Carribbean Blue - See schemecaribbeanblue.png
 
@@ -294,6 +302,7 @@ Carribbean Blue - See schemecaribbeanblue.png
 --cardbdr: #0000ff;
 --cardtext: #94D8F6;
 --cardbkgnd: #2222ff;
+--blockquote: #d7d7e7;
 
 ============================================================
 Sample Header Images
@@ -321,37 +330,6 @@ organisations logo could be added to that scheme.
 The "mintgreen" images are intended to be used in 
 conjunction with the sample "Mint Green" colourscheme 
 whose variable definitions are listed above.
-
-============================================================
-Other Suggested Tweaks to "style.css"
-
-Page Contents:
-In the header area the default stylesheet include a bar 
-displaying the page contents. The text displayed here is 
-also placed in the code that search engines use to 
-determine how to rank the page against any search 
-criteria. It is, therefore, probably not best practice to 
-keep it as short as might be desired to describe the page 
-contents appropriately for search engines.
-
-To stop the display of this bar open the style.css file 
-and search for: 
-
-header h2
-
-It appears in two places (for wide and narrow screens). 
-Remove all the content that appears in braces {} 
-following it and insert instead:
-
-display: none;
-
-You may prefer to use CSS comment marks around the 
-original code so it is easy to restore should you change 
-your mind. Do this:
-
-/*
-  code to be ignored
-*/
 
 ============================================================
 Image Display
@@ -458,5 +436,53 @@ any card:
 The images inserted within the <h3> tags will be floated
 left and displayed at 200pxx150px.
 
+============================================================
+Other Suggested Tweaks to "style.css"
 ____________________________________________________________
-EoF Updated 23 November 2024
+Page Contents:
+
+In the header area the default stylesheet include a bar 
+displaying the page contents. The text displayed here is 
+also placed in the code that search engines use to 
+determine how to rank the page against any search 
+criteria. It is, therefore, probably not best practice to 
+keep it as short as might be desired to describe the page 
+contents appropriately for search engines.
+
+To stop the display of this bar open the style.css file 
+and search for: 
+
+header h2
+
+It appears in two places (for wide and narrow screens). 
+Remove all the content that appears in braces {} 
+following it and insert instead:
+
+display: none;
+
+You may prefer to use CSS comment marks around the 
+original code so it is easy to restore should you change 
+your mind. Do this:
+
+/*
+  code to be ignored
+*/
+____________________________________________________________
+Adjusting for Menu Width:
+
+By default the styling switches between Wide screen and
+Narrow screen mode when the screen/window width reaches
+600px. Typically, this allows for four or five items to
+appear horizontally on the menu bar in wide screen mode
+before wrapping occurs and the menu becomes corrupted.
+
+To allow for a menu bar wider than 600px the style.css file
+will need to be edited in two places. Search the file for
+
+@media
+
+and change the figure as needed to accomodate the options
+in your menu.
+
+____________________________________________________________
+EoF Updated 5 December 2024

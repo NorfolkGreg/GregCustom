@@ -18,24 +18,24 @@ On narrow screens the Site and Page titles switch to left alignment and the menu
 ## Other Features
 ### Theme Limitations:
 Due to the way fields from the Settings pages are used for the site header, the "Simple Blog" plugin is incompatable with the theme.
-Currently, the stylesheet only supports one level of sub-pages.
-### The Menu System
-When sub-pages are added, on hover, the menu shows these on drop-downs beneath the top level item
+Currently, the stylesheet only supports one level of sub-pages. When sub-pages are added then, on hover, the menu shows these on drop-downs beneath the top level item
 
-## Customisation Resources
+### Customisation Resources
 Before activating the theme it is recommended that the "resources" folder is downloaded and deleted from the server as it performs no function there. It contains a number of images and other files that should help explain how to make best use of the theme.
-### ReadMe.txt
-Within the "resources" folder will be fund a ‚ÄúReadMe.txt‚Äù file. This covers the following topics:
-#### Colour Schemes
+#### ReadMe.txt
+Within the "resources" folder will be fund a ìReadMe.txtî file. This covers the following topics:
+##### Colour Schemes
 How to use the list of variables setting the colour definitions for the theme. A number of sample colour scheme declarations are provied together with preview images of them.
-#### Header Area
+##### Header Area
 Notes concerning the "Page Contents" part of the header area and a description of how to add images in the header area that replace the default plain colour background. The resources include sample images to show how this feature can be used.
-#### Suggested Tweaks
-A note on a potential improvement for search engine results.
-#### Image Display
+##### Image Display
 A description of the effects of the styling code for images.
-#### Video and Audio
+##### Video and Audio
 Notes on the code required to take advantage of the features of the theme when incuding video and audio files.
+##### Displaying "Cards"
+Notes on the use of the included styling code to display areas where the contents is shown in rounded corner boxes.
+##### Suggested Tweaks
+A note on a potential improvement for search engine results and how to adapt the stylesheet to cope with different numbers and width of menu options.
 
 ## Future Development
 Contributions of additional colour schemes and header backgrounds that can be included in the "resources" folder in future versions of the theme are welcome together with any suggestions for tweaks to the theme.php or style.css file that you think may be useful to others.

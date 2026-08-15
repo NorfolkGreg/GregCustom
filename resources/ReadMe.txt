@@ -7,29 +7,33 @@ Contents
 + Colour Settings
 + Sample Colour Schemes
 + Sample Header Images
-+ Other Suggested Tweaks
 + Image Display
++ Image Captions and Credits
 + Inserting Videos
 + Inserting Audio
 + Displaying "Cards"
++ Suggested Styling Tweaks
 
 ============================================================
 Colour Settings
 
-The following notes describe all the variables used to set 
-the colours used in the theme's stylesheet, the file 
-"style.css". 
+The following notes describe all the variables used to set
+the colours used in the theme's stylesheet, the file
+"style.css".
+
+Note the three variables marked  ** NEW in v2.0.0 **
+
 
 --scrnbkgnd: Screen Background
-Page content is limited to 900px width. Where the window 
-is wider this colour appears on either side. 
+Page content is limited to 900px width. Where the window
+is wider this colour appears on either side.
 
 --pagebkgnd: Page Background
-Unless over written by the header, menu, main or footer 
-areas of the page this colour will be used. 
+Unless over written by the header, menu, main or footer
+areas of the page this colour will be used.
 
 --headerbkgnd: Header Background
-This colour is used as a background to the Site and Page 
+This colour is used as a background to the Site and Page
 titles.
 
 --sitetitle: Site Title Text
@@ -44,92 +48,85 @@ appears beneath the Page Title. It can be useful to define
 the boundary between the Page Title and Page Sescription
 when the background of both is the same or similar in tone.
 Where the colours are in sharp contrast it is recommended
-to set it to match the --pagetitle colour. 
+to set it to match the --pagetitle colour.
 
 --pagedesc: Page Description Text
-The "Page Description" reproduces the text normally only 
-seen by search engines. It is usually better to show the 
-text in a colur that contrasts with that of the Page 
+The "Page Description" reproduces the text normally only
+seen by search engines. It is usually better to show the
+text in a colur that contrasts with that of the Page
 Title.
- 
+
 --pagedesbkgnd: Page Description Background
-The background of the Page Description Text needs to 
+The background of the Page Description Text needs to
 contrast with the setting above.
 
 --menubkgnd: Menu Background
 The Menu Bar and any drop-downs opened to manage Sub-Pages.
 
 --menubghvr: Menu Background on Hover
-The background colour when the pointer hovers over a menu 
+The background colour when the pointer hovers over a menu
 option.
 
 --menutext: Menu Bar Text
 The colour of the text in the menu bar.
 
---menutxthvr: Menu Bar Txt on Hover
-The colour of the text when the pointer hovers over a menu 
-option.
+--menutxthvr: Menu Bar Text on Hover
+The colour of both the text when the pointer hovers over a
+menu and the colour of the bars in the Hamburger button.
 
 --menubtn: Menu Button Background
-The menu button is only seen on narrow screens. The three 
-bars are black and part of the menu.png image. The 
-background of the button can be changed with this setting.
+The menu button is only seen on narrow screens. This is the
+colour of the background of the button.
 
 --maintop: Main Section Border
-There is a 1px border over the main content area of the 
-page. It is useful to define the boundary between the 
-this and the Menu bar when the background of both is the 
-same or similar in tone. Where the colours are in sharp 
-contrast it is recommended to set it to match the 
---mainbkgnd colour. Check both appearance on both wide 
+There is a 1px border over the main content area of the
+page. It is useful to define the boundary between the
+this and the Menu bar when the background of both is the
+same or similar in tone. Where the colours are in sharp
+contrast it is recommended to set it to match the
+--mainbkgnd colour. Check both appearance on both wide
 and narrow screens.
 
 --maintext: Main Content Area Text
-The colour for all text on the page except where 
-over-ridden by settings for the header, menu or footer 
+The colour for all text on the page except where
+over-ridden by settings for the header, menu or footer
 areas.
 
 --mainbkgnd: Main Content Area Background
-This is the default colour for the background of all text 
-on the page, except where over-ridden by settings for the 
+This is the default colour for the background of all text
+on the page, except where over-ridden by settings for the
 header, menu or footer areas.
 
 --link: Link Text Colour
-The colour of the text in all links link in the main and 
+The colour of the text in all links link in the main and
 footer areas of the page.
 
 --linkhvr: Link Text Colour on Hover
-The colour of the text in all links in the main and footer 
+The colour of the text in all links in the main and footer
 areas when the. pointer hovers over a menu option.
 
---imagebdr: Image Border 
+--imagebdr: Image Border
 The colour of the border placed around all images.
 
 --caption: Image Caption Text
-If a paragraph is assigned one of the classes "caption", 
-"captionright" or "captionleft" this is the color of the 
+If a paragraph is assigned one of the classes "caption",
+"captionright" or "captionleft" this is the color of the
 text.
 
 --captionbkgnd: Image Caption Background
-If a paragraph is assigned one of the classes "caption", 
-"captionright" or "captionleft" this is its background 
+If a paragraph is assigned one of the classes "caption",
+"captionright" or "captionleft" this is its background
 color.
 
---ftrbdr: Footer Border
-There is a 1px border over the footer area of the page. It 
-can be useful to define the boundary between this and the 
-Main Content Area when the background of both is the same 
-or similar in tone. Where the colours are in sharp 
-contrast it is recommended to set it to match the 
---mainbkgnd colour.
+--creditlink: Copyright/Credit Link      ** NEW in v2.0.0 **
+Where a paragraph is assigned one of the classes "caption",
+"captionright" or "captionleft" and includes a link within
+a <span class="credit"> this is the color of the text.
 
---ftrtext: Footer Text
-The colour of text in the footer area.
-
---ftrbkgnd: Footer Background
-Be aware that if there is little content in the footer 
-section, then the colour set by --mainbkgnd will appear 
-below.
+--creditlinkhvr: Copyright/Credit Hover  ** NEW in v2.0.0 **
+Where a paragraph is assigned one of the classes "caption",
+"captionright" or "captionleft" and includes a link within
+a <span class="credit"> this is the hover color of the text.
 
 --section: Line Colour
 When section tags are used and a class "overline" applied
@@ -154,29 +151,54 @@ the background colour applied to Article elements within
 the section.
 
 --blockquote: Background Colour
-The contents blockquote element are given this background
-colour which appears with rounded corners and a small
-amount of padding.
+The contents of a blockquote element are given this
+background colour which appears with rounded corners and a
+small amount of padding.
+
+--warning: Special Note                  ** NEW in v2.0.0 **
+Any element given the class "warning" will be assigned this
+forground colour. Unique in the theme it is intened for
+rare important messages to visitors.
+
+--ftrbdr: Footer Border
+There is a 1px border over the footer area of the page. It
+can be useful to define the boundary between this and the
+Main Content Area when the background of both is the same
+or similar in tone. Where the colours are in sharp
+contrast it is recommended to set it to match the
+--mainbkgnd colour.
+
+--ftrtext: Footer Text
+The colour of text in the footer area.
+
+--ftrbkgnd: Footer Background
+Be aware that if there is little content on the page then
+the colour set by --mainbkgnd will appear below the footer.
+
 
 ============================================================
 Sample Colour Schemes
 
-Below are some sample colour schemes using the variables 
+Below are some sample colour schemes using the variables
 described above.
 
-To implement them open the "syle.css" file found in the 
-"css" folder and wrap the existing variable definitions 
+To implement them open the "syle.css" file found in the
+"css" folder and wrap the existing variable definitions
 in comment tags like this:
 
 /*
 variables to be ignored
 */
 
-and then paste in one of the following sets of colour 
+and then paste in one of the following sets of colour
 settings:
 ____________________________________________________________
 LightMono - See schemelightmono.png
+
 From v0.0.5 this is the default Scheme.
+
+Paste these settings back into style.css to return your
+site's appearance to the default.
 
 --scrnbkgnd: #333333;
 --pagebkgnd: #dddddd;
@@ -199,18 +221,22 @@ From v0.0.5 this is the default Scheme.
 --imagebdr: #000000;
 --caption: #ffffff;
 --captionbkgnd: #666666;
---ftrbdr: #000000;
---ftrtext: #ffffff;
---ftrbkgnd: #999999;
+--creditlink: #ffff00;
+--creditlinkhvr: #d7e7e7;
 --section: #000000;
 --cardbdr: #000000;
 --cardtext: #000000;
 --cardbkgnd: #efefef;
 --blockquote: #d7e7e7;
+--warning: #ff000;
+--ftrbdr: #000000;
+--ftrtext: #ffffff;
+--ftrbkgnd: #999999;
+
 ____________________________________________________________
 Original Dark - See schemeoriginaldark.png
 
---scrnbkgnd: #999999;
+--scrnbkgnd: #666666;
 --pagebkgnd: #333333;
 --headerbkgnd: #000063;
 --sitetitle: #ff0000;
@@ -229,16 +255,20 @@ Original Dark - See schemeoriginaldark.png
 --link: #ffff00;
 --linkhvr: #ff0000;
 --imagebdr: #ffffff;
---caption: #000000;
+--caption: #ffffff;
 --captionbkgnd: #999999;
---ftrbdr: #ffffff;
---ftrtext: #ffffff;
---ftrbkgnd: #333333;
+--creditlink: ffff00;
+--creditlinkhvr: ff0000;
 --section: #ffffff;
 --cardbdr: #ffffff;
 --cardtext: #ffffff;
 --cardbkgnd: #000063;
 --blockquote: #000055;
+--warning: #ff0000;
+--ftrbdr: #ffffff;
+--ftrtext: #ffffff;
+--ftrbkgnd: #333333;
+
 __________________________________________________________
 MintGreen - See schememintgreen.png
 
@@ -258,19 +288,23 @@ MintGreen - See schememintgreen.png
 --maintop: #333333;
 --maintext: #005000;
 --mainbkgnd: #c0e09d;
---link: #005000;
---linkhvr: #99ff11;
+--link: #cc5500;
+--linkhvr: #ffaa00;
 --imagebdr: #005000;
 --caption: #99ff11;
 --captionbkgnd: #609020;
+--creditlink: #ffff00;
+--creditlinkhvr: #ffaa00;
+--section: #36383f;
+--cardbdr: #005000;
+--cardtext: #005000;
+--cardbkgnd: #c0ee90;
+--blockquote: #e7e7d7;
+--warning: #ff00ff;
 --ftrbdr: #36383f;
 --ftrtext: #99ff11;
 --ftrbkgnd: #609020;
---section: #36383f;
---cardbdr: #005000;
---cardtext: #99ff11;
---cardbkgnd: #609020;
---blockquote: #e7e7d7;
+
 ____________________________________________________________
 Carribbean Blue - See schemecaribbeanblue.png
 
@@ -295,40 +329,43 @@ Carribbean Blue - See schemecaribbeanblue.png
 --imagebdr: #0000ff;
 --caption: #ffffff;
 --captionbkgnd: #0099ff;
---ftrbdr: #0000dd;
---ftrtext: #ffffff;
---ftrbkgnd: #0099ff;
+--creditlink: #ffff00;
+--creditlinkhvr: #000033;
 --section: #0000dd;
 --cardbdr: #0000ff;
 --cardtext: #94D8F6;
 --cardbkgnd: #2222ff;
 --blockquote: #d7d7e7;
+--warning: #ff0000;
+--ftrbdr: #0000dd;
+--ftrtext: #ffffff;
+--ftrbkgnd: #0099ff;
 
 ============================================================
 Sample Header Images
 
-Code is in place in the theme to allow images to be 
+Code is in place in the theme to allow images to be
 displayed in the area of the header above the Page
 Description. Such images should be a minimum of 900px by
 160px for wide screens and 600px by 150px for narrow
-screens. 
+screens.
 
-These need to be placed in the themes "images" folder to 
-be displayed and named "headerwide.jpg" and 
-"headernarrow.jpg" for each size of screen. The wide 
-images are set to the left so any prominent feature in 
-them will stay fixed to the left of the window as it is 
-reduced in size. Likewise the narrow images are set to 
+These need to be placed in an "images" sub-folder within
+the theme folder to be displayed and named "headerwide.jpg"
+and "headernarrow.jpg" for each size of screen. The wide
+images are set to the left so any prominent feature in
+them will stay fixed to the left of the window as it is
+reduced in size. Likewise the narrow images are set to
 the right.
 
-The "resources" folder holds some sample images that can 
+The "resources" folder holds some sample images that can
 be displayed as backgrounds to test the feature. These are:
 
-The "originaldark" images are intended to show how a 
-organisations logo could be added to that scheme.
+The "originaldark" images are intended to show how an
+organisation's logo could be added to that scheme.
 
-The "mintgreen" images are intended to be used in 
-conjunction with the sample "Mint Green" colourscheme 
+The "mintgreen" images are intended to be used in
+conjunction with the sample "Mint Green" colourscheme
 whose variable definitions are listed above.
 
 ============================================================
@@ -346,7 +383,23 @@ Similarly, classes "caption", "captionleft"
 and"captionright" can be applied to "p" tags. Such
 paragraphs should hold an image followed by the caption for
 that image.
-Tweaks
+
+============================================================
+Image Captions and Credits
+
+To display a caption and/or an accreditation under an image
+use the following structure
+
+<p class="caption">
+	<img src="" alt="">
+	<span class="credit">&copy;date attribution</span>
+	Caption Text
+</p>
+
+The credit paragraph is right aligned and reduced in size.
+Links within the credit text and will have a distinctive
+colour that changes on hover.
+
 ============================================================
 Inserting Videos
 
@@ -366,7 +419,7 @@ clip itself.
 
 For YouTube you find the required code by selecting the
 "Share" option on the desired video and then clicking on
-the "Embed" optio indicated with the "</>" icon.
+the "Embed" option indicated with the "</>" icon.
 
 For Vimeo it's much the same. The Share option is indicated
 by a "Paper Dart" icon and the Embed code option by the
@@ -380,7 +433,7 @@ Uploaded Video
 First use the WonderCMS file upload facility to upload the
 video and an image, known as the "poster", to be shown
 while the video is downloading, or until the user hits the
-play button. Then add the following code: 
+play button. Then add the following code:
 
 <div class="video">
     <video controls="" style="width:100%" poster="/data/files/myimage.jpg">
@@ -392,7 +445,7 @@ play button. Then add the following code:
 substituting the name of your image for "myimage.jpg"
 and your video for "myvideo.mp4". For the theme code to
 work as intended both image and video should be of 16:9
-aspect ratio and the image should have a ".jpg" extension. 
+aspect ratio and the image should have a ".jpg" extension.
 
 ============================================================
 Inserting Audio
@@ -415,7 +468,7 @@ Displaying Cards
 There is CSS code in the stylesheet that allows the user to
 create "cards", areas where the contents is shown in
 rounded corner boxes. To implements this you need to add
-HTML code in this format: 
+HTML code in this format:
 
 <section class="cards">
     <article>
@@ -434,34 +487,35 @@ any card:
 <p>Content</p>
 
 The images inserted within the <h3> tags will be floated
-left and displayed at 200pxx150px.
+left and displayed at 200px x 150px.
 
 ============================================================
 Other Suggested Tweaks to "style.css"
 ____________________________________________________________
 Page Contents:
 
-In the header area the default stylesheet include a bar 
-displaying the page contents. The text displayed here is 
-also placed in the code that search engines use to 
-determine how to rank the page against any search 
-criteria. It is, therefore, probably not best practice to 
-keep it as short as might be desired to describe the page 
-contents appropriately for search engines.
+In the header area the default stylesheet include a bar
+displaying the page contents. The text displayed here is
+also placed in the code that search engines use to
+determine how to rank the page against any search
+criteria. It is, therefore, probably not best practice to
+keep it as short as is necessary to fit a single line on
+the page. Instead you may wish to feed search engines a
+more detailed description and that requires you stop
+display of the line on the page.
 
-To stop the display of this bar open the style.css file 
-and search for: 
+To do this open the style.css file and search for:
 
 header h2
 
-It appears in two places (for wide and narrow screens). 
-Remove all the content that appears in braces {} 
+It appears in two places (for wide and narrow screens).
+Remove all the content that appears in braces {}
 following it and insert instead:
 
 display: none;
 
-You may prefer to use CSS comment marks around the 
-original code so it is easy to restore should you change 
+You may prefer to use CSS comment marks around the
+original code so it is easy to restore should you change
 your mind. Do this:
 
 /*
@@ -485,4 +539,4 @@ and change the figure as needed to accomodate the options
 in your menu.
 
 ____________________________________________________________
-EoF Updated 5 December 2024
+EoF Updated 12 August 2026

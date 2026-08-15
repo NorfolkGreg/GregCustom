@@ -1,3 +1,9 @@
+
+/* ==========================================================
+   COLOUR SCHEME
+   ========================================================== */
+
+
 :root{
 /* Light Mono */
 	--scrnbkgnd: #333333;
@@ -18,6 +24,8 @@
 	--mainbkgnd: #fdfdfd;
 	--link: #0000ff;
 	--linkhvr: #ff0000;
+	--creditlink: #ffff00;
+	--creditlinkhvr: #d7e7e7;
 	--imagebdr: #000000;
 	--caption: #ffffff;
 	--captionbkgnd: #666666;
@@ -30,25 +38,41 @@
 	--cardbkgnd: #efefef;
 	--blockquote: #d7e7e7;
 }
-/* =========== Any Width Styles =========== */
+
+/* ==========================================================
+   ANY WIDTH STYLES
+   ========================================================== */
+
 body {
 	margin: 0;
 	padding: 0;
 	color: var(--maintext);
 	background-color: var(--scrnbkgnd);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Roboto, sans-serif;
 	min-height: 1000px;
 }
+
+/* ==================== Main Section ====================== */
 .main {
 	border-top: 1px solid var(--maintop);
 	background-color: var(--mainbkgnd);
 	padding: 0.1em 1em;
 }
+.main h1, .main h2, .main h3, .main h4 {
+	font-family: 'McLaren', cursive;
+}
+
 .main a, footer a {
 	color: var(--link);
 }
 .main a:hover, footer a:hover {
 	color: var(--linkhvr);
+}
+.main span.credit a {
+	color: var(--creditlink);
+}
+.main span.credit a:hover {
+	color: var(--creditlinkhvr);
 }
 .main dt {
 	margin-top: 1em;
@@ -71,37 +95,32 @@ body {
 	padding: 0.5em;
 }
 
-div.video {
+.main div.video {
 	width:100%;
 	aspect-ratio: 16 / 9;
 	margin: 1em auto;
 }
-div.video video {
+.main div.video video {
 	border: 1px solid var(--imagebdr);
 }
-div.video iframe {
+.main div.video iframe {
 	border: 1px solid var(--imagebdr);
 	width: 100%;
 	height: 100%;
 }
-audio {
+.main audio {
 	width: 100%;
 }
-footer {
-	border-top: 1px solid var(--ftrbdr);
-	padding: 0.25em 0;
-	color: var(--ftrtext);
-	background-color: var(--ftrbkgnd);
-	margin-bottom: 0;
-}
-footer p {
-	margin: 0.25em 1em;
-}
-footer p.credit {
-	float:right;
+.main .caption span.credit,
+.main .captionleft span.credit,
+.main .captionright span.credit {
+	display: block;
+	text-align: right;
+	margin-right: 0.5em;
+	font-size: 0.7em;
 }
 
-/* ------------ "Card" Styling -------------- */
+/* ==================== "Card" Styling ====================== */
 
 .main section.cards {
 	margin-bottom: 1em;
@@ -137,29 +156,29 @@ footer p.credit {
 	border-radius: 15px;
 	padding:0 10px;
 }
-/* ---------- End "Card" Styling ------------ */
 
-/* =========== Navigation Any Width =========== */
-ul.menu {
-	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	color: var(--menutext);
+/* ==================== Footer Section ====================== */
+
+footer {
+	border-top: 1px solid var(--ftrbdr);
+	padding: 0.25em 0;
+	color: var(--ftrtext);
+	background-color: var(--ftrbkgnd);
+	margin-bottom: 0;
 }
-/* ========== Submenu Dropdown Arrow ========== */
-.menu li > a:after {
-	content: ' \25BC';
-	font-weight: bold
+footer p {
+	margin: 0.25em 1em;
 }
-.menu > li > a:after {
-	content: ' \25BC';
-	font-weight: bold
-}
-.menu li > a:only-child:after {
-	content: ''
+footer p.credit {
+	float:right;
 }
 
-/* =============== Wide Screen Styles ============== */
-@media screen and (min-width: 600px) {
+/* ==========================================================
+   WIDE SCREEN STYLES
+   ========================================================== */
+
+@media screen and (min-width: 601px) {
+
 #wrapper {
 	min-height: 1000px;
 	margin: 0px auto;
@@ -167,7 +186,7 @@ ul.menu {
 	background-color: var(--pagebkgnd);
 	max-width: 900px;
 }
-/* ========== Header Styles =========== */
+/* =================== Header Styles ===================== */
 header {
 	text-align: right;
 	background-color: var(--headerbkgnd);
@@ -201,81 +220,8 @@ header h2 {
 	border-top: 1px solid var(--pagedestop);
 }
 
-/* ============= Navigation ============= */
+/* ======================= Main Styles ===================== */
 
-/* ======== Positioning/Stacking ======== */
-div.inner {
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: 10;
-	display: block;
-	height: 30px;
-	background-color: var(--menubkgnd);
-}
-
-/* Hide checkbox */
-#menuControl {
-	display: none;
-}
-nav {
-	position: absolute;
-	top: 0;
-	z-index: 9;
-	float: left;
-	width: fit-content;
-	background-color: transparent;
-}
-ul.menu {
-	margin: 0 0 0 -40px;
-	list-style: none;
-}
-.menu li {
-	float: left;
-	clear: none;
-	border-right: 1px solid var(--menutext);
-}
-.menu a, p.subpage-nav {
-	display: block;
-	line-height: 30px;
-	text-decoration: none;
-	padding: 0 25px;
-	color: var(--menutext);
-	border-bottom: 1px solid var(--menutext);
-}
-.menu a:hover {
-	background-color: var(--menubghvr);
-	color: var(--menutxthvr);
-}
-
-/* ============ Sub nav ============ */
-.subpage-nav {
-	background-color: var(--menubkgnd);
-}
-.subPageDropdown {
-	position: relative;
-	z-index: 6;
-	list-style: none;
-	padding: 0;
-	display: none;
-	background-color: var(--menubkgnd);
-	border-left: 1px solid var(--menutext);
-	margin-left: -1px;
-}
-.subpage-nav li {
-	float: none;
-	border-right-style: none;
-}
-.subPageDropdown a {
-	color: var(--menutext);
-	margin: 0;
-	padding-left: 25px;
-}
-.subpage-nav:hover .subPageDropdown {
-	display: block;
-}
-
-/* =========== Main Wide Screen Styles =========== */
 .main img {
 	display: block;
 	border: 1px solid var(--imagebdr);
@@ -284,26 +230,38 @@ ul.menu {
 }
 .main img.right {
 	float: right;
-	margin: 0 0 10px 10px;
-	width: 47%;
-	max-width: 381px;
-}
-.main p.captionright {
-	float: right;
 	margin: 0 0 0.5em 10px;
-	width: 47%;
-	max-width: 381px;
+	width: 49%;
 }
 .main img.left {
 	float: left;
-	margin-right: 10px;
-	margin-bottom: 0.5em;
-	max-width: 47%;
+	margin: 0 10px 0.5em 0;
+	width: 49%;
+}
+
+.main div.sidebyside {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
+}
+.main div.sidebyside p.caption,
+.main div.sidebyside img {
+	max-width: 49%;
+	height: auto;
+}
+.main div.sidebyside p.caption img {
+	max-width: 100%;
+}
+
+.main p.captionright {
+	float: right;
+	margin: 0 0 0.5em 10px;
+	width: 48%;
 }
 .main p.captionleft {
 	float: left;
 	margin: 0 10px 0.5em 0;
-	max-width: 47%;
+	max-width: 49%;
 }
 .main p.caption,
 .main p.captionleft,
@@ -319,25 +277,30 @@ ul.menu {
 .main p.captionleft img {
 	border-top-style: none;
 	border-left-style: none;
-	border-bottom: 2px solid ver(--imagebdr);
+	border-bottom: 2px solid var(--imagebdr);
 	border-right-style: none;
 	margin-bottom: 0.25em;
 }
 
 }
 
-/* =========== Narrow Screen Styles =========== */
+/* ==========================================================
+   NARROW SCREEN STYLES
+   ========================================================== */
+
 @media screen and (max-width: 600px) {
 
 body {
 	background-color: var(--pagebkgnd);
 }
+/* =================== Header Styles ===================== */
+
 header {
 	text-align: left;
 	background-color: var(--headerbkgnd);
 	background-position: right top;
 	background-image: url(../images/headernarrow.jpg);
-	line-height: 2.5em;
+	line-height: 3em;
 	padding-top: 10px;
 	border-bottom: 1px solid var(--menutext);
 }
@@ -368,103 +331,28 @@ header h2 {
 	line-height: 1.25em;
 }
 
-/* =========== Navigation - Narrow Screen =========== */
+/* =================== Main Styles ===================== */
 
-/* ======== Positioning/Stacking ======== */
-div.inner {
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: 10;
-	display: block;
-	height: 50px;
-	background-color: var(--menubkgnd);
-}
-
-/* =========== Menu Button =========== */
-#menuControl + label {
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	position: relative;
-	float: right;
-	z-index: 10;
-	cursor: pointer;
-	background-color: var(--menubtn);
-	background-image: url("../images/menu.png");
-	background-repeat: no-repeat;
-	background-position: left top;
-}
-
-/* =========== Hide checkbox =========== */
-#menuControl {
-	display: none;
-}
-
-/* ========== Toggle menu icon ========== */
-#menuControl:checked ~ nav {
-	max-height: 100%;
-}
-
-/* =========== Navigation - Narrow Layout =========== */
-nav {
-	position: relative;
-	top: -50px;
-	z-index: 8;
-	transition: max-height .5s ease-out;
-	width: 100%;
-	background-color: var(--menubkgnd);
-	overflow: hidden;
-}
-ul.menu {
-	margin: 0 0 0 -40px;
-	list-style: none;
-}
-.menu a, p.subpage-nav {
-	display: block;
-	height: 50px;
-	line-height: 50px;
-	text-decoration: none;
-	padding: 0 25px;
-	color: var(--menutext);
-	border-bottom: 1px solid var(--menutext);
-}
-.menu a:hover {
-	background-color: var(--menubghvr);
-	color: var(--menutxthvr);
-}
-
-/* =========== Sub nav =========== */
-nav {
-	min-height: 50px;
-}
-.subpage-nav {
-	position: relative;
-	display: block;
-}
-.subPageDropdown {
-	display: none;
-	width: 100%;
-	margin-left: -40px;
-}
-
-.subPageDropdown a {
-	color: var(--menutext);
-	background-color: var(--menubkgnd);
-	margin: 0;
-	padding-left: 50px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
-.subpage-nav:hover .subPageDropdown {
-	display: block;
-}
-
-/* ========== Main Section - Narrow Screen ========== */
 .main {
   line-height: 1.25em;
 }
+
+.main div.sidebyside {
+	display: flex;
+	flex-direction: column;
+	gap: 1em; /* Adds space between the stacked images */
+}
+.main div.sidebyside img {
+	max-width: 100%; /* Allows images to expand to full width */
+}
+.main div.sidebyside p.caption {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.main div.sidebyside p.caption img {
+	width: 100%;
+}
+
 .main img,
 .main p.caption {
 	display: block;
@@ -499,9 +387,366 @@ nav {
 .main p.captionleft img {
 	border-top-style: none;
 	border-left-style: none;
-	border-bottom: 1px solid ver(--imagebdr);
+	border-bottom: 1px solid var(--imagebdr);
 	border-right-style: none;
 	margin-bottom: 0.25em;
 }
 
+}
+
+/* =========================================================
+   1. BASE / ANY WIDTH NAVIGATION STYLES
+   ========================================================= */
+
+/*
+   The menu is generated by customClickMenu().
+
+   Top-level pages are links. Pages with children are buttons,
+   which means the same HTML structure can provide clickable
+   CSS-only dropdowns on both desktop and mobile screens.
+*/
+
+/* -------------------- Navigation Container ------------------ */
+
+#topMenu {
+    position: relative;
+}
+
+nav {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    color: var(--menutext);
+    background-color: var(--menubkgnd);
+}
+
+/* Keep the menu lists independent of browser defaults. */
+.menu,
+.subPageDropdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------- Links and Buttons --------------------- */
+
+.nav-link,
+button.nav-link {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 5px 20px;
+    color: var(--menutext);
+    background: transparent;
+    border: 0;
+    font: inherit;
+    font-size: 19px;
+    line-height: normal;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Buttons need no browser-specific appearance. */
+button.nav-link {
+    appearance: none;
+}
+
+/* Common hover and keyboard-focus treatment. */
+.nav-link:hover,
+.nav-link:focus,
+.subpage-nav:focus-within > .nav-link {
+    color: var(--menutxthvr);
+    background-color: var(--menubghvr);
+}
+
+/* Remove the default focus outline only where the menu supplies
+   its own visible background treatment. */
+.nav-link:focus-visible {
+    outline: 2px solid var(--menutext);
+    outline-offset: -2px;
+}
+
+/* -------------------- Submenu Indicators ------------------- */
+
+.menu > .subpage-nav > .nav-link::after {
+    content: ' \25BC';
+    font-size: 0.8em;
+}
+
+.subPageDropdown .subpage-nav > .nav-link::after {
+    content: ' \25BA';
+    font-size: 0.8em;
+}
+
+
+/* =========================================================
+   2. HAMBURGER BUTTON
+   ========================================================= */
+
+/* The checkbox remains functional but is not visible. */
+#menuControl {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/*
+   The label is the visible control. It is hidden on wide screens
+   and becomes the close/open control on narrow screens.
+*/
+.hamburger-btn {
+    display: none;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    margin: 4px 10px 4px auto;
+    padding: 7px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--menubghvr);
+    border: 1px solid var(--menutext);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Hamburger bars. */
+.hamburger-btn .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--menutxthvr);
+    border-radius: 2px;
+    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+/* Transform the hamburger into a close symbol. */
+#menuControl:checked ~ .hamburger-btn .top-bar {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#menuControl:checked ~ .hamburger-btn .middle-bar {
+    opacity: 0;
+}
+
+#menuControl:checked ~ .hamburger-btn .bottom-bar {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* =========================================================
+   3. WIDE SCREEN NAVIGATION (min-width: 601px)
+   ========================================================= */
+
+@media screen and (min-width: 601px) {
+
+    /* The complete navigation bar is visible on wide screens. */
+    nav {
+        display: block;
+    }
+
+    /* Top-level menu items form a horizontal navigation bar. */
+    .menu {
+        display: flex !important;
+        justify-content: flex-start;
+    }
+
+    /* Each menu item provides the positioning context for its submenu. */
+    .menu .nav-item {
+        position: relative;
+    }
+
+    /* Vertical separator between top-level menu items. */
+    .menu > .nav-item {
+        border-right: 1px solid var(--menutext);
+    }
+
+    /* ---------------------------------------------------------
+       Submenu containers
+       --------------------------------------------------------- */
+
+    /* All submenus are hidden until their parent receives focus. */
+    .subPageDropdown {
+        display: none;
+        position: absolute;
+        background-color: var(--menubkgnd);
+        border: 1px solid var(--menutext);
+        margin-left: -1px;
+        min-width: 160px;
+        box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
+        border-radius: 0 0 6px 6px;
+        z-index: 1000;
+    }
+
+    /* Level 1 submenu: opens directly below its parent item. */
+    .menu > .subpage-nav > .subPageDropdown {
+        top: 100%;
+        left: 0;
+    }
+
+    /*
+     * Level 2+ submenus remain within the dropdown and are
+     * indented rather than becoming horizontal fly-outs.
+     *
+     * Keeping these menus in the normal vertical flow prevents
+     * deeply nested navigation from extending beyond the screen.
+     */
+    .subPageDropdown .subpage-nav > .subPageDropdown {
+        position: relative;
+        top: -1px;
+        left: 20px;
+        border-radius: 0 6px 6px 6px;
+    }
+
+    /* Rounded upper corner for the first item of an indented submenu. */
+    .subPageDropdown .subpage-nav .nav-item:first-child > .nav-link:hover,
+    .subPageDropdown .subpage-nav .nav-item:first-child > .nav-link:focus {
+        border-radius: 0 6px 0 0;
+    }
+
+    /* Pure CSS click/focus reveal for all submenu levels. */
+    .subpage-nav:focus-within > .subPageDropdown {
+        display: block;
+    }
+
+    /* Individual dropdown links. */
+    .subPageDropdown .nav-link {
+        border-bottom: 1px solid var(--menutext);
+        white-space: nowrap;
+    }
+
+    /* The final item has no bottom separator. */
+    .subPageDropdown .nav-item:last-child > .nav-link {
+        border-bottom: none;
+    }
+
+    /* Rounded lower corners on the final dropdown item. */
+    .subPageDropdown .nav-item:last-child > .nav-link:hover,
+    .subPageDropdown .nav-item:last-child > .nav-link:focus {
+        border-radius: 0 0 6px 6px;
+    }
+}
+
+/* =========================================================
+   4. NARROW / MOBILE SCREEN NAVIGATION (max-width: 600px)
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    /*
+       #topMenu remains in the document flow only as the small
+       control area. The open navigation is positioned over the
+       following page content, so opening it does not move .main.
+    */
+    #topMenu {
+        min-height: 36px;
+    }
+
+    /* Show the hamburger only on narrow screens. */
+    .hamburger-btn {
+        display: flex;
+        position: relative;
+        z-index: 1001;
+    }
+
+    /*
+       The navigation panel begins at the top of #topMenu.
+       This places the first menu item alongside the hamburger.
+       Its full width is retained, including item borders.
+    */
+    #topMenu nav {
+        display: none;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-sizing: border-box;
+        background-color: var(--menubkgnd);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Open the complete menu when the checkbox is checked. */
+    #menuControl:checked ~ nav {
+        display: block;
+    }
+
+    /*
+       The hamburger sits above the navigation panel. The first
+       menu link leaves enough room on its right for the button,
+       while its border continues across the complete menu width.
+    */
+    .menu > .nav-item:first-child > .nav-link,
+    .menu > .nav-item:first-child > button.nav-link {
+        padding-right: 70px;
+    }
+
+    /*
+       The first menu row is matched to the 36px hamburger.
+       Subsequent rows retain the same compact height.
+    */
+    .nav-link,
+    button.nav-link {
+        padding: 9px 20px;
+        min-height: 36px;
+    }
+
+    /* Every mobile menu item receives a full-width separator. */
+    .menu > .nav-item,
+    .subPageDropdown .nav-item {
+        border-bottom: 1px solid var(--menutext);
+    }
+
+    .subPageDropdown .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    /*
+       Mobile submenus remain in normal flow below their parent.
+       Increasing margin-left at each level creates the hierarchy
+       without requiring additional classes or markup.
+    */
+    .subPageDropdown {
+        display: none;
+        margin: -1px 0 0 30px;
+        background-color: rgba(0, 0, 0, 0.05);
+        border-top: 1px solid var(--menutext);
+        border-left: 1px solid var(--menutext);
+        border-radius: 0 0 0 6px;
+    }
+
+    /* Each nested level is indented another 30px. */
+    .subPageDropdown .subPageDropdown {
+        margin-left: 30px;
+    }
+
+    /* Reveal a submenu when its button has focus. */
+    .subpage-nav:focus-within > .subPageDropdown {
+        display: block;
+    }
+
+    /* Mobile submenu text follows the same hierarchy as its border. */
+    .subPageDropdown .nav-link {
+        padding-left: 30px;
+    }
+
+    /* Give deeper levels an additional text indentation. */
+    .subPageDropdown .subPageDropdown .nav-link {
+        padding-left: 30px;
+    }
+
+    /*
+       The final item of an open submenu has a rounded lower corner,
+       matching the submenu's left-hand border.
+    */
+    .subPageDropdown .nav-item:last-child > .nav-link:hover,
+    .subPageDropdown .nav-item:last-child > .nav-link:focus {
+        border-radius: 0 0 0 6px;
+    }
 }

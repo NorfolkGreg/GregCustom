@@ -1,37 +1,48 @@
 # GregCustom
 A responsive Wcms theme with resources to aid customisation.
 
-## Preview - Wide Screens
-On installation screens wider than 600px will look like this:
+## Preview - Fresh Install
+After activation on a fresh installation of WonderCMS screens wider than 600px will look like this:
+
+![Fresh install preview](/preview.jpg)
+
+## Preview - Example Wide Screen
+Here one sees an example site (screen wider than 600px) with its click action multi-level drop-down menu open while an option is selected.
 
 ![Wide screen preview](/previewwide.jpg)
 
 The body of any page is limited to a maximum 900px wide.
 
-All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens. (See "Theme Limitations" below on the implications of this.)
+All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens of the Admin modal. (See "Theme Limitations" below on the implications of this.)
 
-## Preview - Narrow Screens
+## Preview - Example Narrow Screen
 ![Narrow screen preview](/previewnarrow.jpg)
 
-On narrow screens the Site and Page titles switch to left alignment and the menu always shows the HOME page. Further menu options are revealed by clicking the [&equiv;] button. Sub-pages appear on a hover action.
+On narrow screens the Site and Page titles switch to left alignment and the menu opens on clicking the animated [&equiv;] button.
+
+## Upgrade Notes
+Due to the revised click action of the navigation menu in v2.0.0 you will find the pages associated with menu options that have sub-pages become inaccessible. You will need to create new pages at an appropriate point in your menu structure and copy their content to them.
+
+Depending on the arrangement of sub-pages on your site further movement of page content may be necessary to take full advantage of the new menu system.
+
+The menu code no longer requires the "menu.png" file found in the "images" folder. The menu image and its folder, if left empty, may be safely deleted.
 
 ## Other Features
 ### Theme Limitations:
-Due to the way fields from the Settings pages are used for the site header, the "Simple Blog" plugin is incompatable with the theme.
-Currently, the stylesheet only supports one level of sub-pages. When sub-pages are added then, on hover, the menu shows these on drop-downs beneath the top level item
+Due to the way fields from the Settings pages are used for the site header, the "Simple Blog" plugin is incompatible with the theme.
 
 ### Customisation Resources
 Before activating the theme it is recommended that the "resources" folder is downloaded and deleted from the server as it performs no function there. It contains a number of images and other files that should help explain how to make best use of the theme.
 #### ReadMe.txt
-Within the "resources" folder will be fund a “ReadMe.txt” file. This covers the following topics:
+Within the "resources" folder will be fund a "ReadMe.txt" file. This covers the following topics:
 ##### Colour Schemes
-How to use the list of variables setting the colour definitions for the theme. A number of sample colour scheme declarations are provied together with preview images of them.
+How to use the list of variables setting the colour definitions for the theme. A number of sample colour scheme declarations are provided together with preview images of them.
 ##### Header Area
 Notes concerning the "Page Contents" part of the header area and a description of how to add images in the header area that replace the default plain colour background. The resources include sample images to show how this feature can be used.
 ##### Image Display
 A description of the effects of the styling code for images.
 ##### Video and Audio
-Notes on the code required to take advantage of the features of the theme when incuding video and audio files.
+Notes on the code required to take advantage of the features of the theme when including video and audio files.
 ##### Displaying "Cards"
 Notes on the use of the included styling code to display areas where the contents is shown in rounded corner boxes.
 ##### Suggested Tweaks

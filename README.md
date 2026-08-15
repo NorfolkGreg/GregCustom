@@ -4,19 +4,19 @@ A responsive Wcms theme with resources to aid customisation.
 ## Preview - Fresh Install
 After activation on a fresh installation of WonderCMS screens wider than 600px will look like this:
 
-![Fresh install preview](/preview.jpg)
+![Fresh install preview](/preview.png)
 
 ## Preview - Example Wide Screen
 Here one sees an example site (screen wider than 600px) with its click action multi-level drop-down menu open while an option is selected.
 
-![Wide screen preview](/previewwide.jpg)
+![Wide screen preview](/previewwide.png)
 
 The body of any page is limited to a maximum 900px wide.
 
 All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens of the Admin modal. (See "Theme Limitations" below on the implications of this.)
 
 ## Preview - Example Narrow Screen
-![Narrow screen preview](/previewnarrow.jpg)
+![Narrow screen preview](/previewnarrow.png)
 
 On narrow screens the Site and Page titles switch to left alignment and the menu opens on clicking the animated [&equiv;] button.
 

@@ -3,21 +3,18 @@
    COLOUR SCHEME
    ========================================================== */
 
-
 :root{
-/* Light Mono */
+/*  Light Mono - Default Colour Scheme */
 	--scrnbkgnd: #333333;
 	--pagebkgnd: #dddddd;
 	--headerbkgnd: #dddddd;
+	--headerbdr: #333333;	
 	--sitetitle: #ff0000;
 	--pagetitle: #000000;
-	--pagedestop: #000000;
-	--pagedesc: #f9f9f9;
-	--pagedesbkgnd: #999999;
-	--menubkgnd: #dddddd;
-	--menubghvr: #999999;
-	--menutext: #36383F;
-	--menutxthvr: #f9f9f9;
+	--menubkgnd: #999999;
+	--menubghvr: #bbbbbb;
+	--menutext: #ffffff;
+	--menutxthvr: #333333;
 	--menubtn: #909090;
 	--maintop: #333333;
 	--maintext: #000000;
@@ -29,14 +26,15 @@
 	--imagebdr: #000000;
 	--caption: #ffffff;
 	--captionbkgnd: #666666;
-	--ftrbdr: #000000;
-	--ftrtext: #ffffff;
-	--ftrbkgnd: #999999;
 	--section: #000000;
 	--cardbdr: #000000;
 	--cardtext: #000000;
 	--cardbkgnd: #efefef;
 	--blockquote: #d7e7e7;
+	--warning: #ff0000;
+	--ftrbdr: #000000;
+	--ftrtext: #ffffff;
+	--ftrbkgnd: #999999;
 }
 
 /* ==========================================================
@@ -60,7 +58,13 @@ body {
 }
 .main h1, .main h2, .main h3, .main h4 {
 	font-family: 'McLaren', cursive;
+	font-weight: normal;
+	margin-bottom: 0.25em;
 }
+.main p {
+	margin-top: 0.25em;
+}
+
 
 .main a, footer a {
 	color: var(--link);
@@ -78,7 +82,6 @@ body {
 	margin-top: 1em;
 	font-family: 'McLaren', cursive;
 	font-size: 1.5em;
-	font-weight: bold;
 	margin-bottom: 0.25em;
 }
 .main dd p {
@@ -120,6 +123,27 @@ body {
 	font-size: 0.7em;
 }
 
+textarea.source {
+    cursor: text;
+    display: block;
+    width: 95%;
+    box-sizing: border-box;
+    resize: none;
+    overflow: hidden;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 1.2em;
+    padding: 0 0.2em;
+    margin: 0 1em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--pagebkgnd);
+}
+
+.main .warning {
+	color: var(--warning);
+}
+
 /* ==================== "Card" Styling ====================== */
 
 .main section.cards {
@@ -143,6 +167,9 @@ body {
 	margin-top: 0.5em;
 	margin-bottom: 0.25em;
 }
+.cards article h3 a {
+	text-decoration: none 
+}
 .cards article  h3 + p {
 	margin-top: 0.25em;
 }
@@ -161,6 +188,7 @@ body {
 
 footer {
 	border-top: 1px solid var(--ftrbdr);
+	border-bottom: 1px solid var(--ftrbdr);
 	padding: 0.25em 0;
 	color: var(--ftrtext);
 	background-color: var(--ftrbkgnd);
@@ -182,25 +210,25 @@ footer p.credit {
 #wrapper {
 	min-height: 1000px;
 	margin: 0px auto;
-/*	padding-bottom: 1em; */
 	background-color: var(--pagebkgnd);
 	max-width: 900px;
 }
 /* =================== Header Styles ===================== */
 header {
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-image: url(../images/headerwide.jpg);
 	text-align: right;
 	background-color: var(--headerbkgnd);
-	border-bottom: 1px solid var(--menutext);
+	border-bottom: 1px solid var(--headerbdr);
 }
 header h1 {
-	height: 160px;
+	min-height: 160px;
 	font-family: 'McLaren', cursive;
 	font-size: 2em;
-	margin: 0;
+	margin: 0 0 0 20%;
 	padding: 0 20px 0 0;
 	color: var(--pagetitle);
-	background-position: left top;
-	background-image: url(../images/headerwide.jpg);
 }
 header h1 em {
 	font-family: 'Boogaloo', cursive;
@@ -226,7 +254,7 @@ header h2 {
 	display: block;
 	border: 1px solid var(--imagebdr);
 	max-width: 100%;
-	margin: 0 auto 0 auto;
+	margin: 0 auto 1em auto;
 }
 .main img.right {
 	float: right;
@@ -242,7 +270,7 @@ header h2 {
 .main div.sidebyside {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 1em;
+	margin-bottom: 0;
 }
 .main div.sidebyside p.caption,
 .main div.sidebyside img {
@@ -275,10 +303,10 @@ header h2 {
 .main p.caption img,
 .main p.captionright img,
 .main p.captionleft img {
-	border-top-style: none;
-	border-left-style: none;
-	border-bottom: 2px solid var(--imagebdr);
-	border-right-style: none;
+	border-top: none;
+	border-right: none;
+	border-bottom: 1px solid var(--imagebdr);
+	border-left: none;
 	margin-bottom: 0.25em;
 }
 
@@ -296,27 +324,29 @@ body {
 /* =================== Header Styles ===================== */
 
 header {
+	min-height: 130px;
 	text-align: left;
 	background-color: var(--headerbkgnd);
 	background-position: right top;
+	background-repeat: no-repeat;
 	background-image: url(../images/headernarrow.jpg);
-	line-height: 3em;
-	padding-top: 10px;
-	border-bottom: 1px solid var(--menutext);
+	border-bottom: 1px solid var(--headerbdr);
 }
 header h1 {
-	min-height: 130px;
-	margin: 0px 20px 0px 10px;
 	padding: 2px;
 	font-family: 'McLaren', cursive;
 	font-size: 1.75em;
+	margin: 0 5px 5px;
+	line-height: 1.2em;
 	color: var(--pagetitle);
 }
 header h1 em {
+	margin: 0 20% 0 0;
 	font-family: 'Boogaloo', cursive;
 	font-size: 2.5em;
 	font-weight: normal;
 	font-style: normal;
+	line-height: 1em;
 	color: var(--sitetitle);
 }
 header h2 {
@@ -333,14 +363,9 @@ header h2 {
 
 /* =================== Main Styles ===================== */
 
-.main {
-  line-height: 1.25em;
-}
-
 .main div.sidebyside {
 	display: flex;
 	flex-direction: column;
-	gap: 1em; /* Adds space between the stacked images */
 }
 .main div.sidebyside img {
 	max-width: 100%; /* Allows images to expand to full width */
@@ -358,8 +383,7 @@ header h2 {
 	display: block;
 	border: 1px solid var(--imagebdr);
 	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
+	margin: 0 auto 1em auto;
 }
 .main p.caption {
 	text-align: center;
@@ -369,8 +393,8 @@ header h2 {
 }
 .main p.captionleft,
 .main p.captionright {
-	width: 80%;
-	margin: 0 auto 0.5em;
+	width: 100%;
+	margin: 0 auto 1em;
 	border: 1px solid var(--imagebdr);
 	text-align: center;
 	padding: 0 0 0.25em 0;
@@ -379,7 +403,7 @@ header h2 {
 }
 .main img.right, .main img.left {
 	display: block;
-	width: 80%;
+	width: 100%;
 	margin: 1em auto;
 }
 .main p.caption img,
@@ -507,12 +531,12 @@ button.nav-link {
     box-sizing: border-box;
     width: 36px;
     height: 36px;
-    margin: 4px 10px 4px auto;
+    margin: 0 10px 0 auto;
     padding: 7px;
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--menubghvr);
-    border: 1px solid var(--menutext);
+    border: 1px solid var(--headerbdr);
     border-radius: 6px;
     cursor: pointer;
 }
@@ -564,7 +588,7 @@ button.nav-link {
 
     /* Vertical separator between top-level menu items. */
     .menu > .nav-item {
-        border-right: 1px solid var(--menutext);
+        border-right: 1px solid var(--headerbdr);
     }
 
     /* ---------------------------------------------------------
@@ -576,7 +600,7 @@ button.nav-link {
         display: none;
         position: absolute;
         background-color: var(--menubkgnd);
-        border: 1px solid var(--menutext);
+        border: 1px solid var(--headerbdr);
         margin-left: -1px;
         min-width: 160px;
         box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.3);
@@ -617,7 +641,7 @@ button.nav-link {
 
     /* Individual dropdown links. */
     .subPageDropdown .nav-link {
-        border-bottom: 1px solid var(--menutext);
+        border-bottom: 1px solid var(--headerbdr);
         white-space: nowrap;
     }
 
@@ -646,6 +670,8 @@ button.nav-link {
     */
     #topMenu {
         min-height: 36px;
+        padding: 2px 0 3px;
+        background-color: var(--menubkgnd)
     }
 
     /* Show the hamburger only on narrow screens. */
@@ -663,7 +689,7 @@ button.nav-link {
     #topMenu nav {
         display: none;
         position: absolute;
-        top: 3px;
+        top: 0;
         left: 0;
         right: 0;
         z-index: 1000;
@@ -700,7 +726,7 @@ button.nav-link {
     /* Every mobile menu item receives a full-width separator. */
     .menu > .nav-item,
     .subPageDropdown .nav-item {
-        border-bottom: 1px solid var(--menutext);
+        border-bottom: 1px solid var(--headerbdr);
     }
 
     .subPageDropdown .nav-item:last-child {
@@ -716,8 +742,8 @@ button.nav-link {
         display: none;
         margin: -1px 0 0 30px;
         background-color: rgba(0, 0, 0, 0.05);
-        border-top: 1px solid var(--menutext);
-        border-left: 1px solid var(--menutext);
+        border-top: 1px solid var(--headerbdr);
+        border-left: 1px solid var(--headerbdr);
         border-radius: 0 0 0 6px;
     }
 

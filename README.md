@@ -13,23 +13,27 @@ Here one sees an example site (screen wider than 600px) with its click action mu
 
 The body of any page is limited to a maximum 900px wide.
 
-All text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens of the Admin modal. (See "Theme Limitations" below on the implications of this.)
+The text above the menu bar is taken from fields on the "Settings > Menu" and "Settings > Current Page" screens of the Admin modal.
 
 ## Preview - Example Narrow Screen
 ![Narrow screen preview](/previewnarrow.png)
 
 On narrow screens the Site and Page titles switch to left alignment and the menu opens on clicking the animated [&equiv;] button.
 
-## Upgrade Notes
-Due to the revised click action of the navigation menu in v2.0.0 you will find the pages associated with menu options that have sub-pages become inaccessible. You will need to create new pages at an appropriate point in your menu structure and copy their content to them.
+## What's New
+### v2.0.0
+This version introduces a click-action menu that allows a multi-level menu system to be developed. Now all fonts used are web based for a more consistent appearance of text on all platforms.
 
-Depending on the arrangement of sub-pages on your site further movement of page content may be necessary to take full advantage of the new menu system.
+Due to the revised click action of the navigation menu those upgrading from v1.0.1 will find the pages associated with menu options that have sub-pages become inaccessible and will need to create new pages at an appropriate point in your menu structure with content copied from the original page. Depending on the arrangement of sub-pages on your site further movement of menu options may be necessary to take best advantage of the menu system.
 
 The menu code no longer requires the "menu.png" file found in the "images" folder. The menu image and its folder, if left empty, may be safely deleted.
 
+### v2.5.0
+The main change has been the removal of the strap line, sited above the menu bar. Because it used the Page Description variable to provide its content it was always recognised that this prevented proper use of the Contents meta tag. Removing the strap line has led to the deletion of the two variables in the style.css file controlling its colour and a revised colour scheme for the menu bar and the addition of another controlling the colour of the border between the header and menu. 
+
 ## Other Features
 ### Theme Limitations:
-Due to the way fields from the Settings pages are used for the site header, the "Simple Blog" plugin is incompatible with the theme.
+Due to the click-action menu the "Simple Blog" plugin is incompatible with the theme.
 
 ### Customisation Resources
 Before activating the theme it is recommended that the "resources" folder is downloaded and deleted from the server as it performs no function there. It contains a number of images and other files that should help explain how to make best use of the theme.
@@ -38,7 +42,7 @@ Within the "resources" folder will be fund a "ReadMe.txt" file. This covers the 
 ##### Colour Schemes
 How to use the list of variables setting the colour definitions for the theme. A number of sample colour scheme declarations are provided together with preview images of them.
 ##### Header Area
-Notes concerning the "Page Contents" part of the header area and a description of how to add images in the header area that replace the default plain colour background. The resources include sample images to show how this feature can be used.
+How to add images in the header area that replace the default plain colour background. The resources include sample images to show how this feature can be used.
 ##### Image Display
 A description of the effects of the styling code for images.
 ##### Video and Audio

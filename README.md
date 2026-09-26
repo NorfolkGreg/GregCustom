@@ -4,7 +4,7 @@ A responsive Wcms theme with resources to aid customisation.
 ## Preview - Fresh Install
 After activation on a fresh installation of WonderCMS screens wider than 600px will look like this:
 
-![Fresh install preview](/preview.png)
+![Fresh install preview](/preview.jpg)
 
 ## Preview - Example Wide Screen
 Here one sees an example site (screen wider than 600px) with its click action multi-level drop-down menu open while an option is selected.

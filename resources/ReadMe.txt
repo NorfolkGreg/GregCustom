@@ -12,8 +12,9 @@ Contents
 + Inserting Videos
 + Inserting Audio
 + Displaying "Cards"
-+ Suggested Tweaks
-+ Author's Own Site
++ Displaying Programming Code
++ Site Search Documentation
++ Suggested Styling Tweaks
 
 ============================================================
 Colour Settings
@@ -22,9 +23,8 @@ The following notes describe all the variables used to set
 the colours used in the theme's stylesheet, the file
 "style.css".
 
-Note:
-* The variables marked                   ** NEW in v2.X.X **
-* The variables marked               ** Deleted in v2.X.X **
+Note the three variables marked  ** NEW in v2.0.0 **
+
 
 --scrnbkgnd: Screen Background
 Page content is limited to 900px width. Where the window
@@ -44,11 +44,7 @@ The colour of the site title text.
 --pagetitle: Page Title Text
 The colour of the page title text.
 
---headerbdr: Header Border            ** NEW in v2.5.0 **
-There is a 1px border beneath the header area and above
-the menu bar, normally set to match --menutext.
-
---pagedestop: Page Contents Border ** Deleted in v2.5.0 **
+--pagedestop: Page Contents Border
 There is a 1px border above the page description that
 appears beneath the Page Title. It can be useful to define
 the boundary between the Page Title and Page Sescription
@@ -56,14 +52,13 @@ when the background of both is the same or similar in tone.
 Where the colours are in sharp contrast it is recommended
 to set it to match the --pagetitle colour.
 
---pagedesc: Page Description Text  ** Deleted in v2.5.0 **
+--pagedesc: Page Description Text
 The "Page Description" reproduces the text normally only
 seen by search engines. It is usually better to show the
 text in a colur that contrasts with that of the Page
 Title.
 
 --pagedesbkgnd: Page Description Background
-                                   ** Deleted in v2.5.0 **
 The background of the Page Description Text needs to
 contrast with the setting above.
 
@@ -164,7 +159,7 @@ small amount of padding.
 
 --warning: Special Note                  ** NEW in v2.0.0 **
 Any element given the class "warning" will be assigned this
-foreground colour. Unique in the theme it is intended for
+forground colour. Unique in the theme it is intened for
 rare important messages to visitors.
 
 --ftrbdr: Footer Border
@@ -202,50 +197,55 @@ settings:
 ____________________________________________________________
 LightMono - See schemelightmono.png
 
-This is the default Scheme.
+From v0.0.5 this is the default Scheme.
 
 Paste these settings back into style.css to return your
 site's appearance to the default.
 
-	--scrnbkgnd: #333333;
-	--pagebkgnd: #dddddd;
-	--headerbkgnd: #dddddd;
-	--headerbdr: #333333;
-	--sitetitle: #ff0000;
-	--pagetitle: #000000;
-	--menubkgnd: #999999;
-	--menubghvr: #bbbbbb;
-	--menutext: #ffffff;
-	--menutxthvr: #333333;
-	--menubtn: #909090;
-	--maintop: #333333;
-	--maintext: #000000;
-	--mainbkgnd: #fdfdfd;
-	--link: #0000ff;
-	--linkhvr: #ff0000;
-	--creditlink: #ffff00;
-	--creditlinkhvr: #d7e7e7;
-	--imagebdr: #000000;
-	--caption: #ffffff;
-	--captionbkgnd: #666666;
-	--section: #000000;
-	--cardbdr: #000000;
-	--cardtext: #000000;
-	--cardbkgnd: #efefef;
-	--blockquote: #d7e7e7;
-	--warning: #ff0000;
-	--ftrbdr: #000000;
-	--ftrtext: #ffffff;
-	--ftrbkgnd: #999999;
+--scrnbkgnd: #333333;
+--pagebkgnd: #dddddd;
+--headerbkgnd: #dddddd;
+--sitetitle: #ff0000;
+--pagetitle: #000000;
+--pagedestop: #000000;
+--pagedesc: #f9f9f9;
+--pagedesbkgnd: #999999;
+--menubkgnd: #dddddd;
+--menubghvr: #999999;
+--menutext: #36383F;
+--menutxthvr: #f9f9f9;
+--menubtn: #909090;
+--maintop: #333333;
+--maintext: #000000;
+--mainbkgnd: #fdfdfd;
+--link: #0000ff;
+--linkhvr: #ff0000;
+--imagebdr: #000000;
+--caption: #ffffff;
+--captionbkgnd: #666666;
+--creditlink: #ffff00;
+--creditlinkhvr: #d7e7e7;
+--section: #000000;
+--cardbdr: #000000;
+--cardtext: #000000;
+--cardbkgnd: #efefef;
+--blockquote: #d7e7e7;
+--warning: #ff000;
+--ftrbdr: #000000;
+--ftrtext: #ffffff;
+--ftrbkgnd: #999999;
+
 ____________________________________________________________
 Original Dark - See schemeoriginaldark.png
 
 --scrnbkgnd: #666666;
 --pagebkgnd: #333333;
 --headerbkgnd: #000063;
---headerbdr: #333333;
 --sitetitle: #ff0000;
 --pagetitle: #ffffff;
+--pagedestop: #36383f;
+--pagedesc: #666666;
+--pagedesbkgnd: #ffffff;
 --menubkgnd: #ffffff;
 --menubghvr: #dfdfdf;
 --menutext: #36383F;
@@ -256,11 +256,11 @@ Original Dark - See schemeoriginaldark.png
 --mainbkgnd: #333333;
 --link: #ffff00;
 --linkhvr: #ff0000;
---creditlink: ffff00;
---creditlinkhvr: ff0000;
 --imagebdr: #ffffff;
 --caption: #ffffff;
 --captionbkgnd: #999999;
+--creditlink: ffff00;
+--creditlinkhvr: ff0000;
 --section: #ffffff;
 --cardbdr: #ffffff;
 --cardtext: #ffffff;
@@ -277,9 +277,11 @@ MintGreen - See schememintgreen.png
 --scrnbkgnd: #999999;
 --pagebkgnd: #c0e09d;
 --headerbkgnd: #c0e09d;
---headerbdr: #333333;
 --sitetitle: #ffff00;
 --pagetitle: #ffff00;
+--pagedestop: #36383f;
+--pagedesc: #99ff11;
+--pagedesbkgnd: #609020;
 --menubkgnd: #90D050;
 --menubghvr: #609020;
 --menutext: #005000;
@@ -290,11 +292,11 @@ MintGreen - See schememintgreen.png
 --mainbkgnd: #c0e09d;
 --link: #cc5500;
 --linkhvr: #ffaa00;
---creditlink: #ffff00;
---creditlinkhvr: #ffaa00;
 --imagebdr: #005000;
 --caption: #99ff11;
 --captionbkgnd: #609020;
+--creditlink: #ffff00;
+--creditlinkhvr: #ffaa00;
 --section: #36383f;
 --cardbdr: #005000;
 --cardtext: #005000;
@@ -311,9 +313,11 @@ Carribbean Blue - See schemecaribbeanblue.png
 --scrnbkgnd: #000033;
 --pagebkgnd: #000033;
 --headerbkgnd: #0099ff;
---headerbdr: #0000dd;
 --sitetitle: #ffff00;
 --pagetitle: #ffff00;
+--pagedestop: #0099ff;
+--pagedesc: #0000dd;
+--pagedesbkgnd: #0099ff;
 --menubkgnd: #ddffff;
 --menubghvr: #0099ff;
 --menutext: #0000dd;
@@ -324,11 +328,11 @@ Carribbean Blue - See schemecaribbeanblue.png
 --mainbkgnd: #94D8F6;
 --link: #000033;
 --linkhvr: #ffff00;
---creditlink: #ffff00;
---creditlinkhvr: #000033;
 --imagebdr: #0000ff;
 --caption: #ffffff;
 --captionbkgnd: #0099ff;
+--creditlink: #ffff00;
+--creditlinkhvr: #000033;
 --section: #0000dd;
 --cardbdr: #0000ff;
 --cardtext: #94D8F6;
@@ -348,9 +352,9 @@ Description. Such images should be a minimum of 900px by
 160px for wide screens and 600px by 150px for narrow
 screens.
 
-To be displayed these need to be named "headerwide.jpg" and
-"headernarrow.jpg" for each size of screen and can be
-uploaded via the Files page of the Settings modal. The wide
+These need to be placed in an "images" sub-folder within
+the theme folder to be displayed and named "headerwide.jpg"
+and "headernarrow.jpg" for each size of screen. The wide
 images are set to the left so any prominent feature in
 them will stay fixed to the left of the window as it is
 reduced in size. Likewise the narrow images are set to
@@ -417,7 +421,7 @@ clip itself.
 
 For YouTube you find the required code by selecting the
 "Share" option on the desired video and then clicking on
-the "Embed" option indicated with the "< >" icon.
+the "Embed" option indicated with the "</>" icon.
 
 For Vimeo it's much the same. The Share option is indicated
 by a "Paper Dart" icon and the Embed code option by the
@@ -456,12 +460,12 @@ insert the following code into the page:
     <source src="/data/files/myaudio.mp3">
 </audio>
 
-substituting "myaudio.mp3" for the name of your file. The
-code is designed to ensure the player fills the entire
+sbstituting "myaudio.mp3" for the name of your file. The
+them code is designed to ensure the player fills the entire
 available width of the screen/window.
 
 ============================================================
-Displaying "Cards"
+Displaying Cards
 
 There is CSS code in the stylesheet that allows the user to
 create "cards", areas where the contents is shown in
@@ -473,7 +477,7 @@ HTML code in this format:
         First card content here
     </article>
     <article>
-        Seconbd card content here
+        Second card content here
     </article>
 </section>
 
@@ -488,27 +492,36 @@ The images inserted within the <h3> tags will be floated
 left and displayed at 200px x 150px.
 
 ============================================================
-Suggested Tweaks to the Theme
-____________________________________________________________
-Changing the Fonts
+Displaying Programming Code
 
-By default there are three fonts used:
+Place any programming code in the following tags:
 
-Boogaloo: for the Site Title
-McLaren: for all headings and definition terms
-Roboto: for all other content
+<textarea class="source" readonly="">
+  code fragment here
+</textarea>
 
-They are all available from
-https://fonts.google.com
+============================================================
+Site Search Documentation
 
-It is easy to pick alternatives from that site or elsewhere
-and use the "embed code" provided and then replace the code
-found in the <head> area of "theme.php" under the comment
-line "Import Web Fonts".
+To activate the site seach facility simply create a page
+with the name "search". This page can be marked as hidden
+so it doesn't display on the menu, when it could just be
+used as a secret tool for the site admin. If hidden but to
+be seen by site visitors then you would need need to
+provide a link to it in the footer or somewhere else.
 
-You then need to find the original font names, each of which
-appears multiple times in the "styles.css" file, and replace
-them with your chosen font names.
+To prevent pages being included in the results use the
+WonderCMS' file upload facility upload a file named
+"searchexclude.txt". This file should list the pages to be excluded from the results, one page name per line.
+
+Note: For this feature the page name means that which
+appears in the address bar of your browser, i.e. the part
+after the final slash in the page's address. It can differ
+from what appears in the menu, if ther version in the menu
+has spaces or uppercase letters.
+
+============================================================
+Other Suggested Tweaks to "style.css"
 ____________________________________________________________
 Adjusting for Menu Width:
 
@@ -526,16 +539,5 @@ will need to be edited in two places. Search the file for
 and change the figure as needed to accomodate the options
 in your menu.
 
-============================================================
-The Author's Own Site
-
-If you want to see the author's own site, running this
-theme, possibly slightly customised, visit:
-
-https://gregchapman.uk
-
-There are contact details there, should you wish to ask
-questions about theme.
-
 ____________________________________________________________
-EoF Updated 8 September 2026
+EoF Updated 28 September 2026

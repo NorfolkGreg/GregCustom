@@ -8,7 +8,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
 	<!-- Search Engine Optimization (SEO) -->
 	<meta name="title" content="<?= $Wcms->get('config', 'siteTitle') ?> - <?= $Wcms->page('title') ?>" >
 	<meta name="description" content="<?= $Wcms->page('description') ?>">
@@ -16,16 +15,18 @@
 	<meta property="og:url" content="<?= $this->url() ?>" >
 	<meta property="og:type" content="website" >
 	<meta property="og:site_name" content="<?= $Wcms->get('config', 'siteTitle') ?>" >
-	<meta property="og:title" content="<?= $Wcms->get('config', 'siteTitle') ?> - <?= $Wcms->page('title') ?>" >
+	
+<!--	<link href="https://fonts.googleapis.com/css?family=Boogaloo|McLaren" rel="stylesheet">  -->
 
-	<!-- Import Web Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=McLaren&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+	<meta property="og:title" content="<?= $Wcms->page('title') ?>" >
+
 	<!-- Website and page title -->
 	<title>
-		<?= $Wcms->get('config', 'siteTitle') ?> - <?= $Wcms->page('title') ?>
+		<?= $Wcms->page('title') ?>
 	</title>
 
 	<!-- Admin CSS -->
@@ -42,10 +43,8 @@
 	<?= $Wcms->alerts() ?>
 
 	<header>
-		<h1><em><?= $Wcms->get('config', 'siteTitle') ?></em><br>
-			<?= $Wcms->page('title') ?>
-
-		</h1>
+		<h1><em><?= $Wcms->get('config', 'siteTitle') ?></em></h1>
+		<h1><?= $Wcms->page('title') ?></h1>
 	</header>
 
 	<section id="topMenu">
@@ -72,6 +71,10 @@
 
 	<section class="main">
 		<?= $Wcms->page('content') ?>
+
+		<?php if ($Wcms->currentPage === 'search'): ?>
+			<?= wonderSearch() ?>
+		<?php endif; ?>
 	</section>
 
 	<footer>
@@ -81,6 +84,24 @@
 
 	<!-- Admin JavaScript. More JS libraries can be added below -->
 	<?= $Wcms->js() ?>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('textarea.source').forEach(function (box) {
+
+        box.value = box.value.replace(/\n$/, '');
+
+        function resize() {
+            box.style.height = '0';
+            box.style.height = (box.scrollHeight + 2) + 'px';
+        }
+
+        resize();
+    });
+});
+</script>
+
 
 </body>
 </html>

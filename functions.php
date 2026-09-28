@@ -109,3 +109,254 @@ function customClickMenu($items = null, $depth = 0, $parentPath = '') {
 
     return $output;
 }
+
+/**
+ * Custom WonderCMS search
+ * Searches visible menu LINK pages, including nested pages.
+ */
+
+function wonderSearchGetMenuLinks($items, $parentPath = '') {
+    $links = [];
+
+    foreach ($items as $item) {
+        if (is_array($item)) {
+            $item = (object)$item;
+        }
+
+        $slug = trim($item->slug ?? '', '/');
+
+        if ($slug === '') {
+            continue;
+        }
+
+        $currentPath = $parentPath === ''
+            ? $slug
+            : $parentPath . '/' . $slug;
+
+        $subpages = [];
+
+        if (!empty($item->subpages)) {
+            $subpages = is_object($item->subpages)
+                ? get_object_vars($item->subpages)
+                : (array)$item->subpages;
+        }
+
+        $visibleSubpages = array_filter(
+            $subpages,
+            function ($subpage) {
+                $subpage = is_array($subpage)
+                    ? (object)$subpage
+                    : $subpage;
+
+                return !isset($subpage->visibility)
+                    || $subpage->visibility !== 'hide';
+            }
+        );
+
+        if (empty($visibleSubpages)) {
+            $links[] = $currentPath;
+        }
+
+        if (!empty($subpages)) {
+            $links = array_merge(
+                $links,
+                wonderSearchGetMenuLinks($subpages, $currentPath)
+            );
+        }
+    }
+
+    return $links;
+}
+
+
+function wonderSearchGetPageByPath($pages, $path) {
+    $parts = explode('/', $path);
+    $current = $pages;
+
+    foreach ($parts as $index => $part) {
+        if ($index === 0) {
+            if (!isset($current->{$part})) {
+                return null;
+            }
+
+            $current = $current->{$part};
+        } else {
+            if (!isset($current->subpages->{$part})) {
+                return null;
+            }
+
+            $current = $current->subpages->{$part};
+        }
+    }
+
+    return $current;
+}
+
+
+function wonderSearchCleanTitle($title) {
+    return html_entity_decode(
+        $title,
+        ENT_QUOTES | ENT_HTML5,
+        'UTF-8'
+    );
+}
+
+
+function wonderSearch() {
+    global $Wcms;
+
+    $query = trim($_GET['q'] ?? '');
+
+    $searchUrl = $Wcms->url('search');
+
+    $output = '
+    <div class="wondersearch-container">
+        <form method="get" action="' . htmlspecialchars(
+            $searchUrl,
+            ENT_QUOTES,
+            'UTF-8'
+        ) . '">
+            <input
+                type="search"
+                name="q"
+                class="wondersearch-input"
+                placeholder="Search..."
+                aria-label="Search"
+                value="' . htmlspecialchars(
+                    $query,
+                    ENT_QUOTES,
+                    'UTF-8'
+                ) . '"
+            >
+            <button type="submit">Search</button>
+        </form>
+        <div class="wondersearch-results">';
+
+    if ($query === '') {
+        $output .= '</div></div>';
+        return $output;
+    }
+
+    $menuConfig = $Wcms->get('config', 'menuItems');
+
+    $menuItems = is_object($menuConfig)
+        ? get_object_vars($menuConfig)
+        : (array)$menuConfig;
+
+
+    $menuLinks = wonderSearchGetMenuLinks($menuItems);
+    $pages = $Wcms->get('pages');
+
+    // Read the list of page slugs excluded from search.
+    $excludeFile = $Wcms->filesPath . '/searchexclude.txt';
+
+    $excludedSlugs = [];
+
+    if (is_readable($excludeFile)) {
+        $excludedSlugs = file(
+            $excludeFile,
+            FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES
+        );
+
+        $excludedSlugs = array_map('trim', $excludedSlugs);
+    }
+
+
+    foreach ($menuLinks as $path) {
+
+        // Skip the search and 404 pages.
+        if ($path === 'search' || $path === '404') {
+            continue;
+        }
+
+        // Compare the final page slug against the exclusion list.
+        $slug = substr(
+            $path,
+            strrpos($path, '/') === false
+                ? 0
+                : strrpos($path, '/') + 1
+        );
+
+        if (in_array($slug, $excludedSlugs, true)) {
+            continue;
+        }
+
+        $page = wonderSearchGetPageByPath($pages, $path);
+
+
+        if (!$page) {
+            continue;
+        }
+
+        $title = $page->title ?? '';
+        $content = $page->content ?? '';
+
+        $plainContent = html_entity_decode(
+            strip_tags($content),
+            ENT_QUOTES | ENT_HTML5,
+            'UTF-8'
+        );
+
+        $titleMatch = stripos($title, $query) !== false;
+        $contentMatch = stripos($plainContent, $query) !== false;
+
+        if (!$titleMatch && !$contentMatch) {
+            continue;
+        }
+
+        $matchPosition = stripos($plainContent, $query);
+
+        if ($matchPosition !== false) {
+            $start = max(0, $matchPosition - 20);
+            $excerpt = substr($plainContent, $start, 100);
+
+            if ($start > 0) {
+                $excerpt = '...' . $excerpt;
+            }
+        } else {
+            $excerpt = substr($plainContent, 0, 100);
+        }
+
+        $url = $Wcms->url($path);
+
+        $cleanTitle = wonderSearchCleanTitle($title);
+
+        $safeTitle = htmlspecialchars(
+            $cleanTitle,
+            ENT_QUOTES,
+            'UTF-8'
+        );
+
+        $safeExcerpt = htmlspecialchars(
+            $excerpt,
+            ENT_QUOTES,
+            'UTF-8'
+        );
+
+        $safeQuery = htmlspecialchars(
+            $query,
+            ENT_QUOTES,
+            'UTF-8'
+        );
+
+        $highlightedExcerpt = preg_replace(
+            '/(' . preg_quote($safeQuery, '/') . ')/i',
+            '<span style="background-color: yellow">$1</span>',
+            $safeExcerpt
+        );
+
+        $output .= '
+            <div class="wondersearch-item">
+                <a href="' . htmlspecialchars(
+                    $url,
+                    ENT_QUOTES,
+                    'UTF-8'
+                ) . '">' . $safeTitle . '</a>
+                <p>' . $highlightedExcerpt . '</p>
+            </div>';
+    }
+
+    $output .= '</div></div>';
+
+    return $output;
+}

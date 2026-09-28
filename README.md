@@ -1,5 +1,5 @@
 # GregCustom
-A responsive Wcms theme with resources to aid customisation.
+A responsive Wcms theme with search facility and resources to aid customisation.
 
 ## Preview - Fresh Install
 After activation on a fresh installation of WonderCMS screens wider than 600px will look like this:

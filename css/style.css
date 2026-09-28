@@ -3,6 +3,7 @@
    COLOUR SCHEME
    ========================================================== */
 
+
 :root{
 /*  Light Mono - Default Colour Scheme */
 	--scrnbkgnd: #333333;
@@ -12,7 +13,7 @@
 	--sitetitle: #ff0000;
 	--pagetitle: #000000;
 	--menubkgnd: #999999;
-	--menubghvr: #bbbbbb;
+	--menubghvr: #cbcbcb;
 	--menutext: #ffffff;
 	--menutxthvr: #333333;
 	--menubtn: #909090;
@@ -123,7 +124,7 @@ body {
 	font-size: 0.7em;
 }
 
-textarea.source {
+.main textarea.source {
     cursor: text;
     display: block;
     width: 95%;
@@ -142,6 +143,24 @@ textarea.source {
 
 .main .warning {
 	color: var(--warning);
+}
+
+/* ================== Search Page Styling ==================== */
+
+.wondersearch-container {
+    text-align: center;
+}
+
+.wondersearch-input {
+    display: inline-block;
+    width: 30%;
+    box-sizing: border-box;
+    vertical-align: middle;
+    margin: 1em auto;
+}
+
+.wondersearch-results {
+    text-align: left;
 }
 
 /* ==================== "Card" Styling ====================== */
@@ -210,23 +229,24 @@ footer p.credit {
 #wrapper {
 	min-height: 1000px;
 	margin: 0px auto;
+/*	padding-bottom: 1em; */
 	background-color: var(--pagebkgnd);
 	max-width: 900px;
 }
 /* =================== Header Styles ===================== */
 header {
+	min-height: 160px;
 	background-position: left top;
 	background-repeat: no-repeat;
-	background-image: url(../images/headerwide.jpg);
+	background-image: url(/data/files/headerwide.jpg);
 	text-align: right;
 	background-color: var(--headerbkgnd);
 	border-bottom: 1px solid var(--headerbdr);
 }
 header h1 {
-	min-height: 160px;
 	font-family: 'McLaren', cursive;
 	font-size: 2em;
-	margin: 0 0 0 20%;
+	margin: 0 0 0.15em 20%;
 	padding: 0 20px 0 0;
 	color: var(--pagetitle);
 }
@@ -236,16 +256,7 @@ header h1 em {
 	font-weight: normal;
 	font-style: normal;
 	color: var(--sitetitle);
-}
-header h2 {
-	clear: left;
-	margin-top: 0;
 	margin-bottom: 0;
-	padding-right: 20px;
-	padding-bottom: 5px;
-	color: var(--pagedesc);
-	background-color: var(--pagedesbkgnd);
-	border-top: 1px solid var(--pagedestop);
 }
 
 /* ======================= Main Styles ===================== */
@@ -329,7 +340,7 @@ header {
 	background-color: var(--headerbkgnd);
 	background-position: right top;
 	background-repeat: no-repeat;
-	background-image: url(../images/headernarrow.jpg);
+	background-image: url(/data/files/headernarrow.jpg);
 	border-bottom: 1px solid var(--headerbdr);
 }
 header h1 {
@@ -348,17 +359,6 @@ header h1 em {
 	font-style: normal;
 	line-height: 1em;
 	color: var(--sitetitle);
-}
-header h2 {
-	text-align: right;
-	clear: left;
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-right: 10px;
-	color: var(--pagedesc);
-	background-color: var(--pagedesbkgnd);
-	border-top: 1px solid var(--pagedestop);
-	line-height: 1.25em;
 }
 
 /* =================== Main Styles ===================== */
@@ -383,6 +383,8 @@ header h2 {
 	display: block;
 	border: 1px solid var(--imagebdr);
 	width: 100%;
+/*	margin-right: auto;
+	margin-left: auto; */
 	margin: 0 auto 1em auto;
 }
 .main p.caption {

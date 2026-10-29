@@ -32,6 +32,9 @@ It is likely to hold more up to date and detailed information than the ReadMe.tx
 4. Once installed, click the ACTIVATE button
 
 ## What's New
+### v2.6.1
+WonderCMS 3.7.0 private pages are left out of the menu for visitors and out of the site search (theme by NorfolkGreg; the WonderCMS list installs it from the robiso/GregCustom fork, with this change also offered upstream).
+
 ### v2.6.0
 A site search facility has been added. This offers similar facilities to the code built-in to WonderCMS 3.5.0 but with the added benefit that all pages in the site's database are now crawled, not just those on the menu's top level. Results are displayed clustered by menu option. Specific pages can be excluded - useful if you have draft content prepared not ready for publication.
 

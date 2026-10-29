@@ -32,6 +32,9 @@ It is likely to hold more up to date and detailed information than the ReadMe.tx
 4. Once installed, click the ACTIVATE button
 
 ## What's New
+### v2.6.2
+Renders again on WonderCMS 3.4.2 and older (tested on 3.1.4, 3.3.4 and 3.4.2), which have no getSiteLanguage(): the page language falls back to "en" there, as the bundled Sky theme does (theme by NorfolkGreg).
+
 ### v2.6.1
 WonderCMS 3.7.0 private pages are left out of the menu for visitors and out of the site search (theme by NorfolkGreg; the WonderCMS list installs it from the robiso/GregCustom fork, with this change also offered upstream).
 

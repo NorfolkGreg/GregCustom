@@ -30,6 +30,11 @@ function customClickMenu($items = null, $depth = 0, $parentPath = '') {
             continue;
         }
 
+        // A WonderCMS 3.7.0 private page answers 404 to visitors, so they do not see it or its subpages; the logged-in admin does
+        if (!empty($item->private) && !$Wcms->loggedIn) {
+            continue;
+        }
+
         // Determine current page raw slug and label
         $rawSlug = $item->slug ?? (is_string($slug) ? $slug : '');
         $name    = $item->name ?? $item->title ?? $rawSlug;
@@ -56,9 +61,10 @@ function customClickMenu($items = null, $depth = 0, $parentPath = '') {
         }
 
         // Filter hidden subpages
-        $visibleSubpages = array_filter($subpages, function($sub) {
+        $visibleSubpages = array_filter($subpages, function($sub) use ($Wcms) {
             $subObj = is_array($sub) ? (object)$sub : $sub;
-            return !isset($subObj->visibility) || $subObj->visibility !== 'hide';
+            return (!isset($subObj->visibility) || $subObj->visibility !== 'hide')
+                && ($Wcms->loggedIn || empty($subObj->private)); // no empty dropdown for a visitor when every child is private
         });
 
         $hasChildren = !empty($visibleSubpages);

@@ -125,7 +125,8 @@ function wonderSearchGetMenuLinks($items, $parentPath = '') {
 
         $slug = trim($item->slug ?? '', '/');
 
-        if ($slug === '') {
+        // A WonderCMS 3.7.0 private page answers 404 to visitors, so it and its subpages stay out of the results
+        if ($slug === '' || !empty($item->private)) {
             continue;
         }
 

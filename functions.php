@@ -98,8 +98,10 @@ function customClickMenu($items = null, $depth = 0, $parentPath = '') {
         $output .= "\n" . $indent . '<li class="' . trim($liClasses) . '">';
 
         if ($hasChildren) {
-            // Button-driven dropdown header
-            $output .= "\n" . $indent . "    " . '<button type="button" class="nav-link' . $isActive . '">' . htmlspecialchars($name) . '</button>';
+            // The parent page keeps its link; the button beside it opens the sub-menu
+            // tabindex="0" lets Safari (iPhone, iPad, Mac) focus the button and links on a tap or click, which :focus-within needs
+            $output .= "\n" . $indent . "    " . '<a href="' . htmlspecialchars($url) . '" tabindex="0" class="nav-link' . $isActive . '">' . htmlspecialchars($name) . '</a>';
+            $output .= "\n" . $indent . "    " . '<button type="button" tabindex="0" class="nav-link" aria-label="' . htmlspecialchars($name) . ' sub-menu"></button>';
 
             // Sub-menu list using 'subPageDropdown' class
             $output .= "\n" . $indent . "    " . '<ul class="subPageDropdown">';
@@ -107,7 +109,7 @@ function customClickMenu($items = null, $depth = 0, $parentPath = '') {
             $output .= "\n" . $indent . "    " . '</ul>';
         } else {
             // Standard page link
-            $output .= "\n" . $indent . "    " . '<a href="' . htmlspecialchars($url) . '" class="nav-link' . $isActive . '">' . htmlspecialchars($name) . '</a>';
+            $output .= "\n" . $indent . "    " . '<a href="' . htmlspecialchars($url) . '" tabindex="0" class="nav-link' . $isActive . '">' . htmlspecialchars($name) . '</a>';
         }
 
         $output .= "\n" . $indent . '</li>';
@@ -118,10 +120,12 @@ function customClickMenu($items = null, $depth = 0, $parentPath = '') {
 
 /**
  * Custom WonderCMS search
- * Searches visible menu LINK pages, including nested pages.
+ * Searches menu LINK pages, including parent and nested pages.
  */
 
 function wonderSearchGetMenuLinks($items, $parentPath = '') {
+    global $Wcms;
+
     $links = [];
 
     foreach ($items as $item) {
@@ -131,8 +135,8 @@ function wonderSearchGetMenuLinks($items, $parentPath = '') {
 
         $slug = trim($item->slug ?? '', '/');
 
-        // A WonderCMS 3.7.0 private page answers 404 to visitors, so it and its subpages stay out of the results
-        if ($slug === '' || !empty($item->private)) {
+        // A WonderCMS 3.7.0 private page answers 404 to visitors, so it and its subpages stay out of their results; the logged-in admin finds them
+        if ($slug === '' || (!empty($item->private) && !$Wcms->loggedIn)) {
             continue;
         }
 
@@ -148,21 +152,8 @@ function wonderSearchGetMenuLinks($items, $parentPath = '') {
                 : (array)$item->subpages;
         }
 
-        $visibleSubpages = array_filter(
-            $subpages,
-            function ($subpage) {
-                $subpage = is_array($subpage)
-                    ? (object)$subpage
-                    : $subpage;
-
-                return !isset($subpage->visibility)
-                    || $subpage->visibility !== 'hide';
-            }
-        );
-
-        if (empty($visibleSubpages)) {
-            $links[] = $currentPath;
-        }
+        // Every page is searched, including a parent page with visible subpages (its menu link opens it)
+        $links[] = $currentPath;
 
         if (!empty($subpages)) {
             $links = array_merge(

@@ -35,7 +35,7 @@
 	<link rel="stylesheet" href="<?= $Wcms->asset('css/style.css') ?>">
 </head>
 
-<body onload="check()">
+<body>
 	<div id="wrapper">
 
 	<!-- Admin settings panel and alerts -->

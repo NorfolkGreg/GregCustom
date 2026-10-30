@@ -32,6 +32,15 @@ It is likely to hold more up to date and detailed information than the ReadMe.tx
 4. Once installed, click the ACTIVATE button
 
 ## What's New
+### v2.6.3
+Sub-menus open on iPhone, iPad and Mac Safari (the menu buttons and links get tabindex="0", so Safari focuses them). A parent page keeps its link to its own page, with the sub-menu button beside it. The site search also covers parent pages, and the logged-in admin finds private pages in it. The unused onload="check()" call, which raised a JavaScript error on every page, is gone (theme by NorfolkGreg).
+
+### v2.6.2
+Renders again on WonderCMS 3.4.2 and older (tested on 3.1.4, 3.3.4 and 3.4.2), which have no getSiteLanguage(): the page language falls back to "en" there, as the bundled Sky theme does (theme by NorfolkGreg).
+
+### v2.6.1
+WonderCMS 3.7.0 private pages are left out of the menu for visitors and out of the site search (theme by NorfolkGreg; the WonderCMS list installs it from the robiso/GregCustom fork, with this change also offered upstream).
+
 ### v2.6.0
 A site search facility has been added. This offers similar facilities to the code built-in to WonderCMS 3.5.0 but with the added benefit that all pages in the site's database are now crawled, not just those on the menu's top level. Results are displayed clustered by menu option. Specific pages can be excluded - useful if you have draft content prepared not ready for publication.
 

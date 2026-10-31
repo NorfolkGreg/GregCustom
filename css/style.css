@@ -431,7 +431,8 @@ header h1 em {
    The arrow beside it opens and closes its submenu by tap, click
    or the keyboard (Space). It is the label of a hidden checkbox
    that theme.php adds to each parent, so no JavaScript is needed.
-   A mouse also opens a submenu by hovering over its parent.
+   The arrow is the only way to open or close a submenu, on every
+   device, so a touch screen laptop cannot leave one stuck open.
 */
 
 /* -------------------- Navigation Container ------------------ */
@@ -557,10 +558,8 @@ button.nav-link {
     flex-basis: 100%;
 }
 
-/* A ticked arrow (tap, click or Space) shows its sub-menu, and so
-   does a mouse hovering over the parent. */
+/* A ticked arrow (tap, click or Space) shows its sub-menu. */
 .subpage-toggle:checked ~ .subPageDropdown { display: block; }
-@media (hover: hover) { .subpage-nav:hover > .subPageDropdown { display: block; } }
 
 
 /* =========================================================
@@ -654,7 +653,7 @@ button.nav-link {
        Submenu containers
        --------------------------------------------------------- */
 
-    /* All submenus are hidden until their arrow is ticked or hovered. */
+    /* All submenus are hidden until their arrow is ticked. */
     .subPageDropdown {
         display: none;
         position: absolute;
@@ -672,6 +671,11 @@ button.nav-link {
         top: 100%;
         left: 0;
     }
+
+    /* The last item's submenu opens to the left and indents its deeper
+       levels with a margin, so it stays on screen (no sideways scroll). */
+    .menu > .subpage-nav:last-child > .subPageDropdown { left: auto; right: 0; }
+    .menu > .subpage-nav:last-child .subpage-nav > .subPageDropdown { left: 0; margin-left: 20px; }
 
     /*
      * Level 2+ submenus remain within the dropdown and are

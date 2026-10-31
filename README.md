@@ -32,6 +32,9 @@ It is likely to hold more up to date and detailed information than the ReadMe.tx
 4. Once installed, click the ACTIVATE button
 
 ## What's New
+### v2.6.4
+A standard theme: functions.php is gone. The menu is the WonderCMS menu ($Wcms->menu()) and the search is the WonderCMS search ($Wcms->search(), WonderCMS 3.5.0 and newer). A mouse opens a sub-menu by hovering over its parent; on a phone or tablet the first tap on a parent opens its sub-menu and the second tap opens the parent page, as in the Sky theme. The separate sub-menu button is gone. The search shows results as you type, finds subpages at any depth and hidden pages, and leaves private pages out for visitors; searchexclude.txt is no longer read (theme by NorfolkGreg).
+
 ### v2.6.3
 Sub-menus open on iPhone, iPad and Mac Safari (the menu buttons and links get tabindex="0", so Safari focuses them). A parent page keeps its link to its own page, with the sub-menu button beside it. The site search also covers parent pages, and the logged-in admin finds private pages in it. The unused onload="check()" call, which raised a JavaScript error on every page, is gone (theme by NorfolkGreg).
 
@@ -85,7 +88,7 @@ Notes on the use of the included styling code to display areas where the content
 How to take advantage of the styling code to display programming code.
 
 ##### Site Search Documentation
-Information on how the site search feature works, how to implement the facility included in the theme and how to exclude specific pages from the results.
+Information on how the site search feature works and how to switch it on.
 
 ##### Suggested Tweaks
 A note on how to adapt the stylesheet to cope with different numbers and width of menu options.

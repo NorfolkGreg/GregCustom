@@ -48,6 +48,10 @@ $Wcms->addListener('renderPageNavMenuItem', function ($args) {
 	<?= $Wcms->css() ?>
 	<!-- Theme CSS -->
 	<link rel="stylesheet" href="<?= $Wcms->asset('css/style.css') ?>">
+	<?php if (defined('VERSION') && version_compare(VERSION, '3.5.0', '<')): ?>
+	<!-- WonderCMS older than 3.5.0 cannot add the sub-menu arrow, so sub-menus open on hover or focus there -->
+	<style>.subpage-nav:hover > .subPageDropdown, .subpage-nav:focus-within > .subPageDropdown { display: block; }</style>
+	<?php endif; ?>
 </head>
 
 <body>

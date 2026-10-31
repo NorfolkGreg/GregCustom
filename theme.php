@@ -5,8 +5,10 @@ global $Wcms;
 // (a visually hidden checkbox and its label, added to the WonderCMS menu through the renderPageNavMenuItem hook)
 $Wcms->addListener('renderPageNavMenuItem', function ($args) {
 	if (!empty($args[3])) {
-		$id = 'sub-' . trim(preg_replace('#[^a-z0-9]+#i', '-', $args[2]), '-');
-		$name = htmlspecialchars(strip_tags($args[1]->name ?? ''), ENT_QUOTES);
+		// The id comes from the full page path, so it is unique and plain ASCII whatever the page names are
+		$id = 'sub-' . substr(md5($args[2]), 0, 10);
+		// Menu names may already hold entities (&amp;), so they are not escaped a second time
+		$name = htmlspecialchars(strip_tags($args[1]->name ?? ''), ENT_QUOTES, 'UTF-8', false);
 		$args[0] = preg_replace('#</a>#', '</a><input type="checkbox" id="' . $id . '" class="subpage-toggle" aria-label="' . $name . ' sub-menu"><label for="' . $id . '" class="nav-link subpage-button"></label>', $args[0], 1);
 	}
 	return $args;

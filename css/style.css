@@ -498,22 +498,32 @@ button.nav-link {
 
 /* -------------------- Submenu Indicators ------------------- */
 
-.menu > .subpage-nav > .subpage-button::after {
-    content: '\25BC';
+/* The arrow is drawn here, inside a span hidden from screen readers.
+   Its box is a fixed 1em square, so swapping one arrow for another
+   cannot change the height of the menu bar. */
+.subpage-arrow {
+    display: block;
+    width: 1em;
+    height: 1em;
     font-size: 0.8em;
+    line-height: 1em;
+    text-align: center;
 }
 
-.subPageDropdown .subpage-nav > .subpage-button::after {
+.menu > .subpage-nav > .subpage-button > .subpage-arrow::after {
+    content: '\25BC';
+}
+
+.subPageDropdown .subpage-nav > .subpage-button > .subpage-arrow::after {
     content: '\25BA';
-    font-size: 0.8em;
 }
 
 /* An open submenu turns its arrow. */
-.menu > .subpage-nav > .subpage-toggle:checked + .subpage-button::after {
+.menu > .subpage-nav > .subpage-toggle:checked + .subpage-button > .subpage-arrow::after {
     content: '\25B2';
 }
 
-.subPageDropdown .subpage-nav > .subpage-toggle:checked + .subpage-button::after {
+.subPageDropdown .subpage-nav > .subpage-toggle:checked + .subpage-button > .subpage-arrow::after {
     content: '\25BC';
 }
 
@@ -531,6 +541,9 @@ button.nav-link {
 
 .subpage-nav > .subpage-button {
     width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* The checkbox behind each arrow is hidden from sight but stays in
@@ -642,6 +655,13 @@ button.nav-link {
     /* Each menu item provides the positioning context for its submenu. */
     .menu .nav-item {
         position: relative;
+    }
+
+    /* Open lists can overlap. The item under the pointer or holding
+       the keyboard focus lifts its list above the others. */
+    .menu > .nav-item:hover,
+    .menu > .nav-item:focus-within {
+        z-index: 1001;
     }
 
     /* Vertical separator between top-level menu items. */
@@ -779,6 +799,21 @@ button.nav-link {
     button.nav-link {
         padding: 9px 20px;
         min-height: 36px;
+    }
+
+    /* The arrow follows the parent's name instead of the far right.
+       Its tap target is at least 44px square; the negative margins
+       keep a parent's row as tall as any other row. */
+    .subpage-nav > a.nav-link {
+        flex: 0 1 auto;
+        width: auto;
+    }
+
+    .subpage-nav > .subpage-button {
+        min-width: 44px;
+        min-height: 44px;
+        margin: -2px 0;
+        padding: 0 12px;
     }
 
     /* Every mobile menu item receives a full-width separator. */

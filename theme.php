@@ -9,7 +9,12 @@ $Wcms->addListener('renderPageNavMenuItem', function ($args) {
 		$id = 'sub-' . substr(md5($args[2]), 0, 10);
 		// Menu names may already hold entities (&amp;), so they are not escaped a second time
 		$name = htmlspecialchars(strip_tags($args[1]->name ?? ''), ENT_QUOTES, 'UTF-8', false);
-		$args[0] = preg_replace('#</a>#', '</a><input type="checkbox" id="' . $id . '" class="subpage-toggle" aria-label="' . $name . ' sub-menu"><label for="' . $id . '" class="nav-link subpage-button"></label>', $args[0], 1);
+		$end = strpos($args[0], '</a>');
+		if ($end !== false) {
+			// The arrow is drawn by CSS inside an aria-hidden span, so screen readers hear only the aria-label
+			$toggle = '<input type="checkbox" id="' . $id . '" class="subpage-toggle" aria-label="' . $name . ' sub-menu"><label for="' . $id . '" class="nav-link subpage-button"><span class="subpage-arrow" aria-hidden="true"></span></label>';
+			$args[0] = substr_replace($args[0], $toggle, $end + 4, 0);
+		}
 	}
 	return $args;
 });

@@ -1,7 +1,27 @@
-<?php global $Wcms ?>
+<?php
+global $Wcms;
+
+// A parent page keeps its link; the arrow after it opens its sub-menu without JavaScript
+// (a visually hidden checkbox and its label, added to the WonderCMS menu through the renderPageNavMenuItem hook)
+$Wcms->addListener('renderPageNavMenuItem', function ($args) {
+	if (!empty($args[3])) {
+		// The id comes from the full page path, so it is unique and plain ASCII whatever the page names are
+		$id = 'sub-' . substr(md5($args[2]), 0, 10);
+		// Menu names may already hold entities (&amp;), so they are not escaped a second time
+		$name = htmlspecialchars(strip_tags($args[1]->name ?? ''), ENT_QUOTES, 'UTF-8', false);
+		$end = strpos($args[0], '</a>');
+		if ($end !== false) {
+			// The arrow is drawn by CSS inside an aria-hidden span, so screen readers hear only the aria-label
+			$toggle = '<input type="checkbox" id="' . $id . '" class="subpage-toggle" aria-label="' . $name . ' sub-menu"><label for="' . $id . '" class="nav-link subpage-button"><span class="subpage-arrow" aria-hidden="true"></span></label>';
+			$args[0] = substr_replace($args[0], $toggle, $end + 4, 0);
+		}
+	}
+	return $args;
+});
+?>
 
 <!DOCTYPE html>
-<html lang="<?= $Wcms->getSiteLanguage() ?>">
+<html lang="<?= method_exists($Wcms, 'getSiteLanguage') ? $Wcms->getSiteLanguage() : 'en' ?>">
 <head>
 	<!-- Encoding, browser compatibility, viewport -->
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -33,9 +53,13 @@
 	<?= $Wcms->css() ?>
 	<!-- Theme CSS -->
 	<link rel="stylesheet" href="<?= $Wcms->asset('css/style.css') ?>">
+	<?php if (defined('VERSION') && version_compare(VERSION, '3.5.0', '<')): ?>
+	<!-- WonderCMS older than 3.5.0 cannot add the sub-menu arrow, so sub-menus open on hover or focus there -->
+	<style>.subpage-nav:hover > .subPageDropdown, .subpage-nav:focus-within > .subPageDropdown { display: block; }</style>
+	<?php endif; ?>
 </head>
 
-<body onload="check()">
+<body>
 	<div id="wrapper">
 
 	<!-- Admin settings panel and alerts -->
@@ -61,8 +85,7 @@
 
 		<nav>
 			<ul class="menu">
-				<!-- Custom Click Menu -->
-				<?= customClickMenu() ?>
+				<?= $Wcms->menu() ?>
 
 			</ul>
 		</nav>
@@ -73,7 +96,7 @@
 		<?= $Wcms->page('content') ?>
 
 		<?php if ($Wcms->currentPage === 'search'): ?>
-			<?= wonderSearch() ?>
+			<?= method_exists($Wcms, 'search') ? $Wcms->search() : '' ?>
 		<?php endif; ?>
 	</section>
 

@@ -32,6 +32,18 @@ It is likely to hold more up to date and detailed information than the ReadMe.tx
 4. Once installed, click the ACTIVATE button
 
 ## What's New
+### v2.6.4
+A standard theme: functions.php is gone. The menu is the WonderCMS menu ($Wcms->menu()) and the search is the WonderCMS search ($Wcms->search(), WonderCMS 3.5.0 and newer). The menu has no JavaScript: a parent's name opens its page, and the arrow beside it opens and closes its sub-menu with a tap, a click or the Space key (a hidden checkbox and its label, added in theme.php). The arrow is the only way to open or close a sub-menu, on every device, as in the earlier GregCustom design: an open sub-menu stays open until its arrow is tapped again, and tapping elsewhere does not close it. On WonderCMS older than 3.5.0 the arrow is not available and sub-menus open on hover or focus as before. The search shows results as you type (the WonderCMS search uses JavaScript for this), finds subpages at any depth and hidden pages, and leaves private pages out for visitors; searchexclude.txt is no longer read (theme by NorfolkGreg).
+
+### v2.6.3
+Sub-menus open on iPhone, iPad and Mac Safari (the menu buttons and links get tabindex="0", so Safari focuses them). A parent page keeps its link to its own page, with the sub-menu button beside it. The site search also covers parent pages, and the logged-in admin finds private pages in it. The unused onload="check()" call, which raised a JavaScript error on every page, is gone (theme by NorfolkGreg).
+
+### v2.6.2
+Renders again on WonderCMS 3.4.2 and older (tested on 3.1.4, 3.3.4 and 3.4.2), which have no getSiteLanguage(): the page language falls back to "en" there, as the bundled Sky theme does (theme by NorfolkGreg).
+
+### v2.6.1
+WonderCMS 3.7.0 private pages are left out of the menu for visitors and out of the site search (theme by NorfolkGreg; the WonderCMS list installs it from the robiso/GregCustom fork, with this change also offered upstream).
+
 ### v2.6.0
 A site search facility has been added. This offers similar facilities to the code built-in to WonderCMS 3.5.0 but with the added benefit that all pages in the site's database are now crawled, not just those on the menu's top level. Results are displayed clustered by menu option. Specific pages can be excluded - useful if you have draft content prepared not ready for publication.
 
@@ -76,7 +88,7 @@ Notes on the use of the included styling code to display areas where the content
 How to take advantage of the styling code to display programming code.
 
 ##### Site Search Documentation
-Information on how the site search feature works, how to implement the facility included in the theme and how to exclude specific pages from the results.
+Information on how the site search feature works and how to switch it on.
 
 ##### Suggested Tweaks
 A note on how to adapt the stylesheet to cope with different numbers and width of menu options.

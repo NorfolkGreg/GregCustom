@@ -510,15 +510,11 @@ used as a secret tool for the site admin. If hidden but to
 be seen by site visitors then you would need need to
 provide a link to it in the footer or somewhere else.
 
-To prevent pages being included in the results use the
-WonderCMS' file upload facility upload a file named
-"searchexclude.txt". This file should list the pages to be excluded from the results, one page name per line.
-
-Note: For this feature the page name means that which
-appears in the address bar of your browser, i.e. the part
-after the final slash in the page's address. It can differ
-from what appears in the menu, if ther version in the menu
-has spaces or uppercase letters.
+The search is the one built into WonderCMS (3.5.0 and
+newer). Results appear as you type, from the second letter.
+It finds subpages at any depth and hidden pages, and leaves
+private pages out for visitors. A "searchexclude.txt" file
+is no longer read and can be deleted from your files.
 
 ============================================================
 Other Suggested Tweaks to "style.css"

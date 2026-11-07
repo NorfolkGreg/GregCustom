@@ -510,36 +510,33 @@ button.nav-link {
     text-align: center;
 }
 
-.menu > .subpage-nav > .subpage-button > .subpage-arrow::after {
+/* At every level the arrow points down to open and up to close. */
+.subpage-nav > .subpage-button > .subpage-arrow::after {
     content: '\25BC';
 }
 
-.subPageDropdown .subpage-nav > .subpage-button > .subpage-arrow::after {
-    content: '\25BA';
-}
-
-/* An open submenu turns its arrow. */
-.menu > .subpage-nav > .subpage-toggle:checked + .subpage-button > .subpage-arrow::after {
+.subpage-nav > .subpage-toggle:checked + .subpage-button > .subpage-arrow::after {
     content: '\25B2';
-}
-
-.subPageDropdown .subpage-nav > .subpage-toggle:checked + .subpage-button > .subpage-arrow::after {
-    content: '\25BC';
 }
 
 /* -------------------- Parent Link and Sub-menu Button ------ */
 
-/* A parent page's link and its sub-menu button share one row. */
+/* A parent page's link and its sub-menu button share one row.
+   The link takes the remaining width and may wrap its own text;
+   min-width: 0 stops a long name pushing the button onto a row
+   of its own, and the button keeps its width. */
 .subpage-nav {
     display: flex;
     flex-wrap: wrap;
 }
 
 .subpage-nav > a.nav-link {
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .subpage-nav > .subpage-button {
+    flex: 0 0 auto;
     width: auto;
     display: flex;
     align-items: center;
@@ -799,21 +796,30 @@ button.nav-link {
     button.nav-link {
         padding: 9px 20px;
         min-height: 36px;
+        line-height: 23px;
     }
 
     /* The arrow follows the parent's name instead of the far right.
-       Its tap target is at least 44px square; the negative margins
-       keep a parent's row as tall as any other row. */
+       The link leaves room for the button, so a long name wraps
+       its own text rather than pushing the button to a new row. */
     .subpage-nav > a.nav-link {
         flex: 0 1 auto;
         width: auto;
+        max-width: calc(100% - 41px);
     }
 
-    .subpage-nav > .subpage-button {
-        min-width: 44px;
-        min-height: 44px;
-        margin: -2px 0;
-        padding: 0 12px;
+    /* The button is the same 41px square at every level: the height
+       of a row (9px + 23px + 9px). It has no margin or padding, so
+       neither it nor its hover colour reaches the row's borders, and
+       no rounded corner, which belongs to the row's link. */
+    .menu .subpage-nav > label.subpage-button {
+        box-sizing: border-box;
+        width: 41px;
+        height: 41px;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
     }
 
     /* Every mobile menu item receives a full-width separator. */
@@ -859,8 +865,8 @@ button.nav-link {
        The final item of an open submenu has a rounded lower corner,
        matching the submenu's left-hand border.
     */
-    .subPageDropdown .nav-item:last-child > .nav-link:hover,
-    .subPageDropdown .nav-item:last-child > .nav-link:focus {
+    .subPageDropdown .nav-item:last-child > a.nav-link:hover,
+    .subPageDropdown .nav-item:last-child > a.nav-link:focus {
         border-radius: 0 0 0 6px;
     }
 }

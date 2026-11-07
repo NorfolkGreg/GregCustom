@@ -522,9 +522,9 @@ button.nav-link {
 /* -------------------- Parent Link and Sub-menu Button ------ */
 
 /* A parent page's link and its sub-menu button share one row.
-   The link takes the remaining width and may wrap its own text;
-   min-width: 0 stops a long name pushing the button onto a row
-   of its own, and the button keeps its width. */
+   The link takes the remaining width and the button keeps its own;
+   min-width: 0 stops a long name pushing the button onto a row of
+   its own. Wide-screen dropdowns use a grid row instead (section 3). */
 .subpage-nav {
     display: flex;
     flex-wrap: wrap;
@@ -709,8 +709,8 @@ button.nav-link {
     }
 
     /* Rounded upper corner for the first item of an indented submenu. */
-    .subPageDropdown .subpage-nav .nav-item:first-child > .nav-link:hover,
-    .subPageDropdown .subpage-nav .nav-item:first-child > .nav-link:focus {
+    .subPageDropdown .subpage-nav .nav-item:first-child > a.nav-link:hover,
+    .subPageDropdown .subpage-nav .nav-item:first-child > a.nav-link:focus {
         border-radius: 0 6px 0 0;
     }
 
@@ -720,14 +720,34 @@ button.nav-link {
         white-space: nowrap;
     }
 
+    /* In a dropdown a parent's name and its arrow are one unit: the
+       list grows to fit both, as it grows to fit any other name, and
+       its own sub-list takes the full row below them. */
+    .subPageDropdown .subpage-nav {
+        display: grid;
+        grid-template-columns: auto max-content;
+    }
+
+    .subPageDropdown .subpage-nav > a.nav-link {
+        min-width: auto;
+    }
+
+    .subPageDropdown .subpage-nav > .subpage-button {
+        justify-self: end;
+    }
+
+    .subPageDropdown .subpage-nav > .subPageDropdown {
+        grid-column: 1 / -1;
+    }
+
     /* The final item has no bottom separator. */
     .subPageDropdown .nav-item:last-child > .nav-link {
         border-bottom: none;
     }
 
     /* Rounded lower corners on the final dropdown item. */
-    .subPageDropdown .nav-item:last-child > .nav-link:hover,
-    .subPageDropdown .nav-item:last-child > .nav-link:focus {
+    .subPageDropdown .nav-item:last-child > a.nav-link:hover,
+    .subPageDropdown .nav-item:last-child > a.nav-link:focus {
         border-radius: 0 0 6px 6px;
     }
 }

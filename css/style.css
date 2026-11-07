@@ -725,7 +725,7 @@ button.nav-link {
        its own sub-list takes the full row below them. */
     .subPageDropdown .subpage-nav {
         display: grid;
-        grid-template-columns: auto max-content;
+        grid-template-columns: minmax(max-content, 1fr) max-content;
     }
 
     .subPageDropdown .subpage-nav > a.nav-link {
@@ -749,6 +749,15 @@ button.nav-link {
     .subPageDropdown .nav-item:last-child > a.nav-link:hover,
     .subPageDropdown .nav-item:last-child > a.nav-link:focus {
         border-radius: 0 0 6px 6px;
+    }
+}
+
+/* Between the narrow layout and a bar wide enough for every name at full padding, the
+   bar's links use half the side padding, so the bar stays one row and no name runs under its arrow. */
+@media screen and (min-width: 601px) and (max-width: 767px) {
+    .menu > .nav-item > a.nav-link {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 

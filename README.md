@@ -32,6 +32,9 @@ It is likely to hold more up to date and detailed information than the ReadMe.tx
 4. Once installed, click the ACTIVATE button
 
 ## What's New
+### v2.6.5
+Three menu fixes after testing 2.6.4. In a dropdown, a parent's name and its arrow stay on one row and the list grows to fit them, as it grows to fit any long name. On narrow screens every arrow button is the same 41px square at every level, the height of a row, so it stays between the row's lines and never takes the list's rounded corner. Every arrow points down when its sub-menu is closed and up when it is open, on the bar and in the lists (theme by NorfolkGreg).
+
 ### v2.6.4
 A standard theme: functions.php is gone. The menu is the WonderCMS menu ($Wcms->menu()) and the search is the WonderCMS search ($Wcms->search(), WonderCMS 3.5.0 and newer). The menu has no JavaScript: a parent's name opens its page, and the arrow beside it opens and closes its sub-menu with a tap, a click or the Space key (a hidden checkbox and its label, added in theme.php). The arrow is the only way to open or close a sub-menu, on every device, as in the earlier GregCustom design: an open sub-menu stays open until its arrow is tapped again, and tapping elsewhere does not close it. On WonderCMS older than 3.5.0 the arrow is not available and sub-menus open on hover or focus as before. The search shows results as you type (the WonderCMS search uses JavaScript for this), finds subpages at any depth and hidden pages, and leaves private pages out for visitors; searchexclude.txt is no longer read (theme by NorfolkGreg).
 

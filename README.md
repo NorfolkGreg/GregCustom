@@ -32,6 +32,9 @@ It is likely to hold more up to date and detailed information than the ReadMe.tx
 4. Once installed, click the ACTIVATE button
 
 ## What's New
+### v2.6.6
+Three menu changes asked for after 2.6.5. On narrow screens every option answers to the pointer across the full width of its row, and the open and close buttons form a column under the hamburger button, in the same rounded box with a border. At every width an option goes back to its normal colours as soon as its sub-menu is closed; it is highlighted only while the pointer is over it or the keyboard is on it. On wide screens the arrow buttons are square and sit right against the end of the name. Dropdown rows are now plain block layout, which Firefox, Chrome and Gnome Web all size the same way, so a long parent name can no longer push its button out of the list in Firefox.
+
 ### v2.6.5
 Three menu fixes after testing 2.6.4. In a dropdown, a parent's name and its arrow stay on one row and the list grows to fit them, as it grows to fit any long name. On narrow screens every arrow button is the same 41px square at every level, the height of a row, so it stays between the row's lines and never takes the list's rounded corner. Every arrow points down when its sub-menu is closed and up when it is open, on the bar and in the lists (theme by NorfolkGreg).
 

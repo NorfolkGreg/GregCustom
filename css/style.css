@@ -731,16 +731,18 @@ button.nav-link {
     }
 
     /* On wide screens the arrow button is a square as wide as the
-       row is high. On the bar the parent's name has no space after
-       it, so the pointer goes from the last letter straight onto
-       the button. */
-    .menu .nav-item.subpage-nav > a.nav-link {
-        padding-right: 0;
-    }
-
+       row is high. On the bar it is drawn over the space after the
+       parent's name, so the pointer goes from the last letter
+       straight onto the button. The name keeps its own padding, so
+       a WonderCMS too old to add the button (before 3.5.0) shows the
+       name exactly as it did. */
     .menu .nav-item.subpage-nav > label.subpage-button {
         width: 33px;
         padding: 0;
+    }
+
+    .menu > .nav-item.subpage-nav > label.subpage-button {
+        margin-left: -20px;
     }
 
     /* In a dropdown a parent's link takes the full width of its row
@@ -781,6 +783,10 @@ button.nav-link {
     .menu > .nav-item > a.nav-link {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .menu > .nav-item.subpage-nav > label.subpage-button {
+        margin-left: -10px;
     }
 }
 

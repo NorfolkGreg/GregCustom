@@ -481,10 +481,19 @@ button.nav-link {
     appearance: none;
 }
 
-/* Common hover and keyboard-focus treatment. */
-.nav-link:hover,
-.nav-link:focus,
-.subpage-nav:focus-within > .nav-link {
+/* Hover and keyboard-focus treatment. An option is highlighted while
+   the pointer is over it or the keyboard is on it, and at no other
+   time: clicking an arrow leaves the focus on its checkbox, which
+   must not keep the option highlighted after its list is closed.
+   The rules are separate so a browser that does not know
+   :focus-visible still applies the hover one. */
+.nav-link:hover {
+    color: var(--menutxthvr);
+    background-color: var(--menubghvr);
+}
+
+.nav-link:focus-visible,
+.subpage-toggle:focus-visible + .subpage-button {
     color: var(--menutxthvr);
     background-color: var(--menubghvr);
 }
@@ -524,7 +533,8 @@ button.nav-link {
 /* A parent page's link and its sub-menu button share one row.
    The link takes the remaining width and the button keeps its own;
    min-width: 0 stops a long name pushing the button onto a row of
-   its own. Wide-screen dropdowns use a grid row instead (section 3). */
+   its own. Wide-screen dropdowns and narrow screens lay the row out
+   differently (sections 3 and 4). */
 .subpage-nav {
     display: flex;
     flex-wrap: wrap;
@@ -720,24 +730,39 @@ button.nav-link {
         white-space: nowrap;
     }
 
-    /* In a dropdown a parent's name and its arrow are one unit: the
-       list grows to fit both, as it grows to fit any other name, and
-       its own sub-list takes the full row below them. */
+    /* On wide screens the arrow button is a square as wide as the
+       row is high. On the bar it is drawn over the space after the
+       parent's name, so the pointer goes from the last letter
+       straight onto the button. The name keeps its own padding, so
+       a WonderCMS too old to add the button (before 3.5.0) shows the
+       name exactly as it did. */
+    .menu .nav-item.subpage-nav > label.subpage-button {
+        width: 33px;
+        padding: 0;
+    }
+
+    .menu > .nav-item.subpage-nav > label.subpage-button {
+        margin-left: -20px;
+    }
+
+    /* In a dropdown a parent's link takes the full width of its row
+       and leaves room at its right-hand end for the button, which
+       lies over it. The row is plain block layout, so every browser
+       makes the list wide enough for the name, the button and any
+       sub-list below, and the name can never run under the button. */
     .subPageDropdown .subpage-nav {
-        display: grid;
-        grid-template-columns: minmax(max-content, 1fr) max-content;
+        display: block;
     }
 
-    .subPageDropdown .subpage-nav > a.nav-link {
-        min-width: auto;
+    .menu .subPageDropdown .nav-item.subpage-nav > a.nav-link {
+        padding-right: 33px;
     }
 
-    .subPageDropdown .subpage-nav > .subpage-button {
-        justify-self: end;
-    }
-
-    .subPageDropdown .subpage-nav > .subPageDropdown {
-        grid-column: 1 / -1;
+    .menu .subPageDropdown .nav-item.subpage-nav > label.subpage-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 33px;
     }
 
     /* The final item has no bottom separator. */
@@ -758,6 +783,10 @@ button.nav-link {
     .menu > .nav-item > a.nav-link {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .menu > .nav-item.subpage-nav > label.subpage-button {
+        margin-left: -10px;
     }
 }
 
@@ -828,27 +857,64 @@ button.nav-link {
         line-height: 23px;
     }
 
-    /* The arrow follows the parent's name instead of the far right.
-       The link leaves room for the button, so a long name wraps
-       its own text rather than pushing the button to a new row. */
-    .subpage-nav > a.nav-link {
-        flex: 0 1 auto;
-        width: auto;
-        max-width: calc(100% - 41px);
+    /* A parent's link takes the full width of its row, so the whole
+       row answers to the pointer. Its text stops short of the button,
+       which lies over the right-hand end of the row. */
+    .subpage-nav {
+        position: relative;
     }
 
-    /* The button is the same 41px square at every level: the height
-       of a row (9px + 23px + 9px). It has no margin or padding, so
-       neither it nor its hover colour reaches the row's borders, and
-       no rounded corner, which belongs to the row's link. */
+    .subpage-nav > a.nav-link {
+        flex: 1 1 100%;
+        width: 100%;
+        padding-right: 56px;
+    }
+
+    /* The open and close buttons form a column under the hamburger.
+       The label is the area that answers to a tap: the height of a
+       row (9px + 23px + 9px) and a little wider than the box drawn
+       inside it. It has no colour of its own, on hover or otherwise. */
     .menu .subpage-nav > label.subpage-button {
         box-sizing: border-box;
-        width: 41px;
+        position: absolute;
+        top: 0;
+        right: 4px;
+        width: 48px;
         height: 41px;
         min-height: 0;
         margin: 0;
         padding: 0;
         border-radius: 0;
+        background-color: transparent;
+    }
+
+    /* The box matches the hamburger: the same size, colours, border
+       and rounded corners, and the same distance from the right. It
+       stays inside the lines above and below its row. */
+    .menu .subpage-nav > label.subpage-button > .subpage-arrow {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+        line-height: 1;
+        color: var(--menutxthvr);
+        background-color: var(--menubghvr);
+        border: 1px solid var(--headerbdr);
+        border-radius: 6px;
+    }
+
+    /* When the first option is itself a parent, its button sits to
+       the left of the hamburger instead of under it. */
+    .menu > .subpage-nav:first-child > label.subpage-button {
+        right: 50px;
+        padding: 0;
+    }
+
+    .menu > .subpage-nav:first-child > a.nav-link {
+        padding-right: 102px;
     }
 
     /* Every mobile menu item receives a full-width separator. */
